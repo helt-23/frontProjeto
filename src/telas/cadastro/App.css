@@ -1,0 +1,430 @@
+:root {
+    --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+        "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
+        "Source Han Sans CN", sans-serif;
+}
+
+.main-container {
+    overflow: hidden;
+}
+
+.main-container,
+.main-container * {
+    box-sizing: border-box;
+}
+
+input,
+select,
+textarea,
+button {
+    outline: 0;
+}
+
+.main-container {
+    position: relative;
+    width: 1440px;
+    height: 1024px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.barra-superior {
+    position: relative;
+    width: 1440px;
+    height: 50px;
+    margin: 0 0 0 0;
+    background: #0f6829;
+    border: 1px solid #000000;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.tela-branca {
+    position: relative;
+    width: 1156px;
+    height: 752px;
+    margin: 99px 0 0 142px;
+    background: #ffffff;
+    border: 2px solid #000000;
+    z-index: 2;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 4px 0 rgba(12, 12, 13, 0.05);
+}
+
+.flex-row-f {
+    position: relative;
+    width: 1054px;
+    height: 69px;
+    margin: 42px 0 0 48px;
+    z-index: 29;
+}
+
+.botao-voltar {
+    position: absolute;
+    width: 60px;
+    height: 58px;
+    top: 0;
+    left: 0;
+    z-index: 29;
+}
+
+.botao-voltar-1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: url(../assets/images/ee07e38e-bf59-49dc-9996-283dd848a7e8.png) no-repeat center;
+    background-size: 100% 100%;
+    z-index: 30;
+}
+
+.logo-unifesspa {
+    position: absolute;
+    width: 69px;
+    height: 69px;
+    top: 0;
+    left: 985px;
+    background: url(../assets/images/70672ce5848878a5f7f6c8586ae7e6be78a25b89.png) no-repeat center;
+    background-size: cover;
+    z-index: 7;
+    border-radius: 34.5px;
+}
+
+.cadastro {
+    display: block;
+    position: relative;
+    height: 61px;
+    margin: 2px 0 0 449px;
+    color: #354446;
+    font-family: Red Hat Mono, var(--default-font-family);
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 47.628px;
+    text-align: left;
+    white-space: nowrap;
+    letter-spacing: 4.03px;
+    z-index: 6;
+}
+
+.bloco-nome {
+    position: relative;
+    width: 544.168px;
+    height: 27px;
+    margin: 37px 0 0 325.832px;
+    z-index: 8;
+}
+
+.input-nome {
+    position: absolute;
+    width: 87.66%;
+    height: 100%;
+    top: 0;
+    left: 12.34%;
+    background: #d9d9d9;
+    border: 1px solid #000000;
+    z-index: 9;
+    border-radius: 5px;
+}
+
+.nome {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    position: absolute;
+    height: 92.58%;
+    top: 0;
+    left: 0;
+    color: rgba(0, 0, 0, 0.44);
+    font-family: Red Hat Mono, var(--default-font-family);
+    font-size: 17.925521850585938px;
+    font-weight: 400;
+    line-height: 23.715px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+.bloco-sobrenome {
+    position: relative;
+    width: 594.986px;
+    height: 27px;
+    margin: 19px 0 0 276.014px;
+    z-index: 20;
+}
+
+.input-sobrenome {
+    position: absolute;
+    width: 80.17%;
+    height: 100%;
+    top: 0;
+    left: 19.83%;
+    background: #d9d9d9;
+    border: 1px solid #000000;
+    z-index: 21;
+    border-radius: 5px;
+}
+
+.sobrenome {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    position: absolute;
+    height: 92.58%;
+    top: 7.41%;
+    left: 0;
+    color: rgba(0, 0, 0, 0.44);
+    font-family: Red Hat Mono, var(--default-font-family);
+    font-size: 17.925521850585938px;
+    font-weight: 400;
+    line-height: 23.715px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 22;
+}
+
+.bloco-matricula {
+    position: relative;
+    width: 593.986px;
+    height: 27px;
+    margin: 26px 0 0 276.014px;
+    z-index: 23;
+}
+
+.input-matricula {
+    position: absolute;
+    width: 80.3%;
+    height: 100%;
+    top: 0;
+    left: 19.7%;
+    background: #d9d9d9;
+    border: 1px solid #000000;
+    z-index: 25;
+    border-radius: 5px;
+}
+
+.matricula {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    position: absolute;
+    height: 92.58%;
+    top: 7.41%;
+    left: 0;
+    color: rgba(0, 0, 0, 0.44);
+    font-family: Red Hat Mono, var(--default-font-family);
+    font-size: 17.925521850585938px;
+    font-weight: 400;
+    line-height: 23.715px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 24;
+}
+
+.bloco-curso {
+    position: relative;
+    width: 553.748px;
+    height: 27px;
+    margin: 28px 0 0 316.252px;
+    z-index: 11;
+}
+
+.input-curso {
+    position: absolute;
+    width: 86.14%;
+    height: 100%;
+    top: 0;
+    left: 13.86%;
+    background: #d9d9d9;
+    border: 1px solid #000000;
+    z-index: 12;
+    border-radius: 5px;
+}
+
+.curso {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    position: absolute;
+    height: 92.58%;
+    top: 0;
+    left: 0;
+    color: rgba(0, 0, 0, 0.44);
+    font-family: Red Hat Mono, var(--default-font-family);
+    font-size: 17.925521850585938px;
+    font-weight: 400;
+    line-height: 23.715px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 13;
+}
+
+.bloco-senha {
+    position: relative;
+    width: 553.748px;
+    height: 27px;
+    margin: 24px 0 0 316.252px;
+    z-index: 14;
+}
+
+.input-senha {
+    position: absolute;
+    width: 86.14%;
+    height: 100%;
+    top: 0;
+    left: 13.86%;
+    background: #d9d9d9;
+    border: 1px solid #000000;
+    z-index: 15;
+    border-radius: 5px;
+}
+
+.span-senha {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    position: absolute;
+    height: 92.58%;
+    top: 0;
+    left: 0;
+    color: rgba(0, 0, 0, 0.44);
+    font-family: Red Hat Mono, var(--default-font-family);
+    font-size: 17.925521850585938px;
+    font-weight: 400;
+    line-height: 23.715px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 16;
+}
+
+.bloco-confirmacao {
+    position: relative;
+    width: 669px;
+    height: 27px;
+    margin: 28px 0 0 202px;
+    z-index: 17;
+}
+
+.input-confirmar {
+    position: absolute;
+    width: 71.3%;
+    height: 100%;
+    top: 0;
+    left: 28.7%;
+    background: #d9d9d9;
+    border: 1px solid #000000;
+    z-index: 18;
+    border-radius: 5px;
+}
+
+.span-confirmar-senha {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    position: absolute;
+    height: 92.59%;
+    top: 0;
+    left: 0;
+    color: rgba(0, 0, 0, 0.44);
+    font-family: Red Hat Mono, var(--default-font-family);
+    font-size: 17.925521850585938px;
+    font-weight: 400;
+    line-height: 23.715px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 19;
+}
+
+.bloco-data {
+    position: relative;
+    width: 685px;
+    height: 27px;
+    margin: 36px 0 0 185px;
+    z-index: 26;
+}
+
+.span-data-nascimento {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    position: absolute;
+    height: 92.59%;
+    top: 0;
+    left: 0;
+    color: rgba(0, 0, 0, 0.44);
+    font-family: Red Hat Mono, var(--default-font-family);
+    font-size: 17.925521850585938px;
+    font-weight: 400;
+    line-height: 23.715px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 27;
+}
+
+.input-data {
+    position: absolute;
+    width: 69.64%;
+    height: 100%;
+    top: 0;
+    left: 30.36%;
+    background: #d9d9d9;
+    border: 1px solid #000000;
+    z-index: 28;
+    border-radius: 5px;
+}
+
+.botao-cadastrar {
+    position: absolute;
+    width: 477px;
+    height: 40px;
+    margin: 36px 0 0 340px;
+    cursor: pointer;
+    font-size: 0px;
+    background: transparent;
+    border: none;
+    z-index: 3;
+    overflow: visible auto;
+}
+
+.cadastrar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 280px;
+    height: 20px;
+    margin: 0px 0 0 0px;
+    color: #ffffff;
+    font-family: Red Hat Mono, var(--default-font-family);
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 19px;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+    z-index: 5;
+}
+
+.retangulo-verde {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #1e8e3e;
+    z-index: 4;
+    border-radius: 6px;
+}
+
+.back-ground {
+    position: absolute;
+    width: 1440px;
+    height: 1024px;
+    top: 50%;
+    left: 50%;
+    background: url(../assets/images/705a0b0a7d81bbd83f0eb96b5af38bf6f5511cff.png) no-repeat center;
+    background-size: cover;
+    transform: translate(-50%, -50%);
+}

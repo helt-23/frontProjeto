@@ -1,0 +1,336 @@
+:root {
+    --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+        "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
+        "Source Han Sans CN", sans-serif;
+}
+
+.main-container {
+    overflow: hidden;
+}
+
+.main-container,
+.main-container * {
+    box-sizing: border-box;
+}
+
+input,
+select,
+textarea,
+button {
+    outline: 0;
+}
+
+.main-container {
+    position: relative;
+    width: 1440px;
+    height: 1024px;
+    margin: 0 auto;
+    background: #ffffff;
+    border: 1px solid #000000;
+    overflow: hidden;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.barra-superior {
+    position: relative;
+    width: 1440px;
+    height: 50px;
+    margin: 0 0 0 0;
+    background: #0f6829;
+    border: 2px solid #000000;
+    z-index: 14;
+    overflow: hidden;
+}
+
+.telas-brancas {
+    position: relative;
+    width: 1245px;
+    height: 777px;
+    margin: 63px 0 0 98px;
+    background: url(../assets/images/c71ac48d-df93-4167-a200-66ec2c70a90f.png) no-repeat center;
+    background-size: cover;
+    z-index: 1;
+    overflow: visible auto;
+}
+
+.flex-row {
+    position: relative;
+    width: 600px;
+    height: 69px;
+    margin: 96px 0 0 537px;
+    z-index: 13;
+}
+
+.logo-unifesspa {
+    position: absolute;
+    width: 69px;
+    height: 69px;
+    top: 0;
+    left: 531px;
+    background: url(../assets/images/70672ce5848878a5f7f6c8586ae7e6be78a25b89.png) no-repeat center;
+    background-size: cover;
+    z-index: 13;
+    border-radius: 34.5px;
+}
+
+.login-1 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 56px;
+    top: 13px;
+    left: 0;
+    color: #354446;
+    font-family: Red Hat Mono, var(--default-font-family);
+    font-size: 53px;
+    font-weight: 400;
+    line-height: 56px;
+    text-align: left;
+    white-space: nowrap;
+    letter-spacing: 4.03px;
+    z-index: 11;
+}
+
+.lab-management {
+    display: block;
+    position: relative;
+    height: 61px;
+    margin: 32px 0 0 278px;
+    color: #354446;
+    font-family: Red Hat Mono, var(--default-font-family);
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 47.628px;
+    text-align: left;
+    text-overflow: initial;
+    white-space: nowrap;
+    letter-spacing: 4.03px;
+    z-index: 12;
+    overflow: hidden;
+}
+
+.usuario-caixa {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    position: relative;
+    width: 514px;
+    height: 47px;
+    margin: 40px 0 0 356px;
+    padding: 4px 0 4px 0;
+    background: #ffffff;
+    border: 2px solid #000000;
+    z-index: 15;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.bloco-usuario {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    flex-basis: auto;
+    position: absolute;
+    width: 108px;
+    height: 24px;
+    top: 9.5px;
+    left: -2px;
+    color: rgba(0, 0, 0, 0.44);
+    font-family: Red Hat Mono, var(--default-font-family);
+    font-size: 17.925521850585938px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 16;
+}
+
+.user-input {
+    flex-shrink: 0;
+    position: absolute;
+    width: 514px;
+    height: 47px;
+    padding: 15px;
+    padding-left: 100px;
+    background: transparent;
+    border: none;
+    z-index: 18;
+    outline: none;
+}
+
+.icone-pessoa {
+    flex-shrink: 0;
+    position: absolute;
+    width: 41px;
+    height: 39px;
+    top: 50%;
+    right: -2px;
+    background: url(assets/images/710d310b-1c18-46e2-a82e-40b6c8507712.png) no-repeat center;
+    background-size: cover;
+    transform: translate(0, -55.13%);
+    z-index: 17;
+}
+
+
+.senha {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    flex-basis: auto;
+    position: absolute;
+    width: 85px;
+    height: 24px;
+    top: 9px;
+    left: 40px;
+    color: rgba(0, 0, 0, 0.44);
+    font-family: Red Hat Mono, var(--default-font-family);
+    font-size: 17.925521850585938px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 20;
+}
+
+.bloco-senha-input {
+    flex-shrink: 0;
+    position: absolute;
+    width: 514px;
+    height: 47px;
+    border-radius: 5px;
+    top: -2px;
+    left: 40px;
+    padding: 10px;
+    padding-left: 80px;
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.74);
+    z-index: 22;
+    outline: none;
+}
+
+.olho {
+    flex-shrink: 0;
+    position: absolute;
+    width: 37.82px;
+    height: 27.58px;
+    top: 20px;
+    left: 300px;
+    background: url(assets/images/20c3839a-d32d-400e-9cc7-a8ba019aa17b.png) no-repeat center;
+    background-size: cover;
+    transform: translate(552.61%, -52.57%);
+    z-index: 21;
+}
+
+.caixa-lembrar-senha {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    width: 10px;
+    height: 13px;
+    margin: 24px 0 0 385px;
+    z-index: 10;
+}
+
+.rectangle {
+    flex-shrink: 0;
+    position: relative;
+    width: 14px;
+    height: 13px;
+    border: 1px solid rgba(0, 0, 0, 0.74);
+    background: transparent;
+    z-index: 9;
+}
+
+.lembrar-dos-meus-dados {
+    flex-shrink: 0;
+    position: relative;
+    height: 13px;
+    color: rgba(0, 0, 0, 0.49);
+    font-family: Red Hat Mono, var(--default-font-family);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 13px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+.botao-login-lab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 477px;
+    height: 49.992px;
+    margin: 47px 0 0 383px;
+    background: #1e8e3e;
+    z-index: 4;
+    border-radius: 6px;
+}
+
+.entrar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+    width: 280.271px;
+    height: 18.747px;
+    color: #ffffff;
+    font-family: Red Hat Mono, var(--default-font-family);
+    font-size: 15.36473274230957px;
+    font-weight: 400;
+    line-height: 18.747px;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+    z-index: 4;
+}
+
+.rectangle-3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 477px;
+    height: 49.992px;
+    margin: 24.008px 0 0 380px;
+    background: #1e8e3e;
+    z-index: 7;
+    border-radius: 6px;
+}
+
+.realizar-cadastro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+    width: 280.271px;
+    height: 18.747px;
+    color: #ffffff;
+    font-family: Red Hat Mono, var(--default-font-family);
+    font-size: 15.36473274230957px;
+    font-weight: 400;
+    line-height: 18.747px;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+    z-index: 7;
+}
+
+.image {
+    position: absolute;
+    width: 1440px;
+    height: 1024px;
+    top: -1px;
+    left: -1px;
+    background: url() no-repeat center;
+    background-size: cover;
+}
