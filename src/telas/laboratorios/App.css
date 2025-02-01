@@ -1,24 +1,5 @@
 :root {
-    --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-        Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
-        "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
-        "Source Han Sans CN", sans-serif;
-}
-
-.main-container {
-    overflow: hidden;
-}
-
-.main-container,
-.main-container * {
-    box-sizing: border-box;
-}
-
-input,
-select,
-textarea,
-button {
-    outline: 0;
+    --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei", "Source Han Sans CN", sans-serif;
 }
 
 .main-container {
@@ -28,31 +9,32 @@ button {
     margin: 0 auto;
     background: #ffffff;
     border: 2px solid #000000;
-    overflow: hidden;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    overflow: hidden;
 }
 
+/* CABEÇALHO */
 .barra-superior {
     position: relative;
-    width: 1440px;
+    width: 100%;
     height: 50px;
-    margin: 0 0 0 0;
     background: #0f6829;
-    border: 2px solid #000000;
+    border-bottom: 2px solid #000000;
     z-index: 101;
-    overflow: hidden;
 }
 
 .botao-usuario {
-    position: relative;
+    position: absolute;
+    right: 20px;
+    top: 6px;
     width: 40px;
     height: 39px;
-    margin: 6px 0 0 1332px;
     background: url(assets/images/a6aeff2f-505c-4ced-a9fc-2902a64b4bd6.png) no-repeat center;
     background-size: cover;
     z-index: 102;
 }
 
+/* ÁREA PRINCIPAL */
 .tabela {
     position: relative;
     width: 1245px;
@@ -61,27 +43,15 @@ button {
     background: url(../assets/images/c71ac48d-df93-4167-a200-66ec2c70a90f.png) no-repeat center;
     background-size: cover;
     z-index: 1;
-    overflow: visible auto;
 }
 
+/* TÍTULO */
 .flex-row-ed {
     position: relative;
     width: 774px;
     height: 82px;
     margin: 0 0 0 408px;
     z-index: 100;
-}
-
-.logo-unifesspa {
-    position: absolute;
-    width: 69px;
-    height: 69px;
-    top: 0;
-    left: 705px;
-    background: url(../assets/images/70672ce5848878a5f7f6c8586ae7e6be78a25b89.png) no-repeat center;
-    background-size: cover;
-    z-index: 2;
-    border-radius: 34.5px;
 }
 
 .laboratorios {
@@ -103,1568 +73,117 @@ button {
     z-index: 100;
 }
 
+/* GRADE DE LABORATÓRIOS */
 .tabela-de-labs {
     position: relative;
     width: 1046px;
     height: 592px;
     margin: 11px 0 0 102px;
     background: #797979;
-    border: 1px solid #000000;
+    border: 5px solid #000000;
     z-index: 3;
     overflow: hidden;
 }
 
 .flex-row-e {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
+    flex-wrap: wrap;
+    gap: 20px;
     width: 994px;
-    height: 146px;
     margin: 15px 0 0 24px;
     z-index: 28;
+    height: auto;
 }
 
+/* CARD DO LABORATÓRIO */
 .pasta-labs {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    flex-wrap: nowrap;
-    flex-shrink: 0;
-    gap: 10px;
-    position: relative;
-    width: 226px;
-    z-index: 4;
+    width: calc(25% - 20px);
+    /* Mantém 4 colunas */
+    margin-bottom: 20px;
 }
 
 .botao-lab {
-    align-self: stretch;
-    flex-shrink: 0;
-    position: relative;
-    min-width: 0;
+    width: 100%;
     height: 146px;
     background: url(assets/images/b642ef98834e3fe50fc39200de27aa16b78b8b7f.png) no-repeat center;
     background-size: cover;
-    z-index: 5;
-    overflow: hidden;
     border-radius: 20px 0 20px 0;
-    box-sizing: content-box;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 0 0 2px #000000;
+    /* Borda escura de 2px */
 }
 
 .id-sala {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: nowrap;
-    gap: 10px;
-    position: relative;
-    width: 110px;
-    height: 29px;
-    margin: -1px 0 0 0;
-    padding: 10px 10px 10px 10px;
     background: #b7b1b1;
     border: 1px solid #000000;
-    z-index: 10;
-    border-radius: 20px 0 20px 0;
+    border-radius: 20px 0;
+    padding: 5px 10px;
+    width: max-content;
 }
 
 .sala-24 {
-    flex-shrink: 0;
-    flex-basis: auto;
-    position: relative;
-    height: 26px;
-    color: #000000;
     font-family: Yantramanav, var(--default-font-family);
     font-size: 20px;
-    font-weight: 400;
-    line-height: 25.938px;
-    text-align: left;
+    letter-spacing: 1.5px;
     white-space: nowrap;
-    letter-spacing: 4.03px;
-    z-index: 11;
 }
 
 .num-de-lugares {
-    position: relative;
-    width: 102px;
-    height: 23px;
-    margin: 22px 0 0 125px;
     background: #4ea151;
     border: 1px solid #000000;
-    z-index: 8;
     border-radius: 10px 0 0 0;
+    padding: 2px 5px;
+    width: 100px;
+    margin-left: auto;
 }
 
 .lugares {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    position: absolute;
-    width: 89px;
-    height: 17px;
-    top: 0;
-    left: 5.5px;
-    color: #000000;
     font-family: Red Hat Display, var(--default-font-family);
     font-size: 13px;
-    font-weight: 400;
-    line-height: 17px;
-    text-align: center;
+    display: block;
+    width: 100%;
     white-space: nowrap;
-    letter-spacing: 4.03px;
-    z-index: 9;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* Truncamento do texto */
 }
 
 .descricao {
+    background: #ffffff;
+    border: 1px solid #000000;
+    padding: 5px;
+    width: 100%;
+    min-height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-wrap: nowrap;
-    gap: 10px;
-    position: relative;
-    width: 228px;
-    margin: 0 0 0 -1px;
-    padding: 2px 26px 2px 26px;
-    background: #ffffff;
-    border: 1px solid #000000;
-    z-index: 6;
-    overflow: hidden;
-    box-sizing: content-box;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
 
 .laboratorio-computacao {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-shrink: 0;
-    position: relative;
-    width: 176px;
-    height: 69px;
-    color: #000000;
     font-family: Yantramanav, var(--default-font-family);
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 23.344px;
+    font-size: 16px;
     text-align: center;
-    letter-spacing: 4.03px;
-    z-index: 7;
-}
-
-.pasta-labs-1 {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    flex-wrap: nowrap;
-    flex-shrink: 0;
-    gap: 10px;
-    position: relative;
-    width: 226px;
-    z-index: 12;
-}
-
-.botao-lab-2 {
-    align-self: stretch;
-    flex-shrink: 0;
-    position: relative;
-    min-width: 0;
-    height: 146px;
-    background: url(assets/images/b642ef98834e3fe50fc39200de27aa16b78b8b7f.png) no-repeat center;
-    background-size: cover;
-    z-index: 13;
+    line-height: 1.2;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    /* Limita a 2 linhas */
+    -webkit-box-orient: vertical;
     overflow: hidden;
-    border-radius: 20px 0 20px 0;
-    box-sizing: content-box;
+    text-overflow: ellipsis;
+    /* Truncamento do texto */
 }
 
-.id-sala-3 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: nowrap;
-    gap: 10px;
-    position: relative;
-    width: 110px;
-    height: 29px;
-    margin: -1px 0 0 0;
-    padding: 10px 10px 10px 10px;
-    background: #b7b1b1;
-    border: 1px solid #000000;
-    z-index: 18;
-    border-radius: 20px 0 20px 0;
-}
-
-.sala-24-4 {
-    flex-shrink: 0;
-    flex-basis: auto;
-    position: relative;
-    height: 26px;
-    color: #000000;
-    font-family: Yantramanav, var(--default-font-family);
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 25.938px;
-    text-align: left;
-    white-space: nowrap;
-    letter-spacing: 4.03px;
-    z-index: 19;
-}
-
-.num-de-lugares-5 {
-    position: relative;
-    width: 102px;
-    height: 23px;
-    margin: 22px 0 0 125px;
-    background: #4ea151;
-    border: 1px solid #000000;
-    z-index: 16;
-    border-radius: 10px 0 0 0;
-}
-
-.lugares-30 {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    position: absolute;
-    width: 89px;
-    height: 17px;
-    top: 0;
-    left: 5.5px;
-    color: #000000;
-    font-family: Red Hat Display, var(--default-font-family);
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 17px;
-    text-align: center;
-    white-space: nowrap;
-    letter-spacing: 4.03px;
-    z-index: 17;
-}
-
-.descricao-6 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: nowrap;
-    gap: 10px;
-    position: relative;
-    width: 228px;
-    margin: 0 0 0 -1px;
-    padding: 2px 26px 2px 26px;
-    background: #ffffff;
-    border: 1px solid #000000;
-    z-index: 14;
-    overflow: hidden;
-    box-sizing: content-box;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-}
-
-.lab-computacao {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-shrink: 0;
-    position: relative;
-    width: 176px;
-    height: 69px;
-    color: #000000;
-    font-family: Yantramanav, var(--default-font-family);
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 23.344px;
-    text-align: center;
-    letter-spacing: 4.03px;
-    z-index: 15;
-}
-
-.pasta-labs-7 {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    flex-wrap: nowrap;
-    flex-shrink: 0;
-    gap: 10px;
-    position: relative;
-    width: 226px;
-    z-index: 20;
-}
-
-.botao-lab-8 {
-    align-self: stretch;
-    flex-shrink: 0;
-    position: relative;
-    min-width: 0;
-    height: 146px;
-    background: url(assets/images/b642ef98834e3fe50fc39200de27aa16b78b8b7f.png) no-repeat center;
-    background-size: cover;
-    z-index: 21;
-    overflow: hidden;
-    border-radius: 20px 0 20px 0;
-    box-sizing: content-box;
-}
-
-.id-sala-9 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: nowrap;
-    gap: 10px;
-    position: relative;
-    width: 110px;
-    height: 29px;
-    margin: -1px 0 0 0;
-    padding: 10px 10px 10px 10px;
-    background: #b7b1b1;
-    border: 1px solid #000000;
-    z-index: 26;
-    border-radius: 20px 0 20px 0;
-}
-
-.sala-24-a {
-    flex-shrink: 0;
-    flex-basis: auto;
-    position: relative;
-    height: 26px;
-    color: #000000;
-    font-family: Yantramanav, var(--default-font-family);
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 25.938px;
-    text-align: left;
-    white-space: nowrap;
-    letter-spacing: 4.03px;
-    z-index: 27;
-}
-
-.num-lugares {
-    position: relative;
-    width: 102px;
-    height: 23px;
-    margin: 22px 0 0 125px;
-    background: #4ea151;
-    border: 1px solid #000000;
-    z-index: 24;
-    border-radius: 10px 0 0 0;
-}
-
-.lugares-30-b {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    position: absolute;
-    width: 89px;
-    height: 17px;
-    top: 0;
-    left: 5.5px;
-    color: #000000;
-    font-family: Red Hat Display, var(--default-font-family);
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 17px;
-    text-align: center;
-    white-space: nowrap;
-    letter-spacing: 4.03px;
-    z-index: 25;
-}
-
-.descricao-c {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: nowrap;
-    gap: 10px;
-    position: relative;
-    width: 228px;
-    margin: 0 0 0 -1px;
-    padding: 2px 26px 2px 26px;
-    background: #ffffff;
-    border: 1px solid #000000;
-    z-index: 22;
-    overflow: hidden;
-    box-sizing: content-box;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-}
-
-.lab-computacao-d {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-shrink: 0;
-    position: relative;
-    width: 176px;
-    height: 69px;
-    color: #000000;
-    font-family: Yantramanav, var(--default-font-family);
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 23.344px;
-    text-align: center;
-    letter-spacing: 4.03px;
-    z-index: 23;
-}
-
-.pasta-labs-e {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    flex-wrap: nowrap;
-    flex-shrink: 0;
-    gap: 10px;
-    position: relative;
-    width: 226px;
-    z-index: 28;
-}
-
-.botao-lab-f {
-    align-self: stretch;
-    flex-shrink: 0;
-    position: relative;
-    min-width: 0;
-    height: 146px;
-    background: url(../assets/images/b642ef98834e3fe50fc39200de27aa16b78b8b7f.png) no-repeat center;
-    background-size: cover;
-    z-index: 29;
-    overflow: hidden;
-    border-radius: 20px 0 20px 0;
-    box-sizing: content-box;
-}
-
-.id-sala-10 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: nowrap;
-    gap: 10px;
-    position: relative;
-    width: 110px;
-    height: 29px;
-    margin: -1px 0 0 0;
-    padding: 10px 10px 10px 10px;
-    background: #b7b1b1;
-    border: 1px solid #000000;
-    z-index: 34;
-    border-radius: 20px 0 20px 0;
-}
-
-.sala-24-11 {
-    flex-shrink: 0;
-    flex-basis: auto;
-    position: relative;
-    height: 26px;
-    color: #000000;
-    font-family: Yantramanav, var(--default-font-family);
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 25.938px;
-    text-align: left;
-    white-space: nowrap;
-    letter-spacing: 4.03px;
-    z-index: 35;
-}
-
-.num-lugares-12 {
-    position: relative;
-    width: 102px;
-    height: 23px;
-    margin: 22px 0 0 125px;
-    background: #4ea151;
-    border: 1px solid #000000;
-    z-index: 32;
-    border-radius: 10px 0 0 0;
-}
-
-.lugares-30-13 {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    position: absolute;
-    width: 89px;
-    height: 17px;
-    top: 0;
-    left: 5.5px;
-    color: #000000;
-    font-family: Red Hat Display, var(--default-font-family);
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 17px;
-    text-align: center;
-    white-space: nowrap;
-    letter-spacing: 4.03px;
-    z-index: 33;
-}
-
-.descricao-14 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: nowrap;
-    gap: 10px;
-    position: relative;
-    width: 228px;
-    margin: 0 0 0 -1px;
-    padding: 2px 26px 2px 26px;
-    background: #ffffff;
-    border: 1px solid #000000;
-    z-index: 30;
-    overflow: hidden;
-    box-sizing: content-box;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-}
-
-.lab-computacao-15 {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-shrink: 0;
-    position: relative;
-    width: 176px;
-    height: 69px;
-    color: #000000;
-    font-family: Yantramanav, var(--default-font-family);
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 23.344px;
-    text-align: center;
-    letter-spacing: 4.03px;
-    z-index: 31;
-}
-
-.flex-row-ca {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    width: 994px;
-    height: 146px;
-    margin: 51px 0 0 24px;
-    z-index: 60;
-}
-
-.pasta-labs-16 {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    flex-wrap: nowrap;
-    flex-shrink: 0;
-    gap: 10px;
-    position: relative;
-    width: 226px;
-    z-index: 36;
-}
-
-.botao-lab-17 {
-    align-self: stretch;
-    flex-shrink: 0;
-    position: relative;
-    min-width: 0;
-    height: 146px;
-    background: url(../assets/images/b642ef98834e3fe50fc39200de27aa16b78b8b7f.png) no-repeat center;
-    background-size: cover;
-    z-index: 37;
-    overflow: hidden;
-    border-radius: 20px 0 20px 0;
-    box-sizing: content-box;
-}
-
-.id-sala-18 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: nowrap;
-    gap: 10px;
-    position: relative;
-    width: 110px;
-    height: 29px;
-    margin: -1px 0 0 0;
-    padding: 10px 10px 10px 10px;
-    background: #b7b1b1;
-    border: 1px solid #000000;
-    z-index: 42;
-    border-radius: 20px 0 20px 0;
-}
-
-.sala {
-    flex-shrink: 0;
-    flex-basis: auto;
-    position: relative;
-    height: 26px;
-    color: #000000;
-    font-family: Yantramanav, var(--default-font-family);
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 25.938px;
-    text-align: left;
-    white-space: nowrap;
-    letter-spacing: 4.03px;
-    z-index: 43;
-}
-
-.num-de-lugares-19 {
-    position: relative;
-    width: 102px;
-    height: 23px;
-    margin: 22px 0 0 125px;
-    background: #4ea151;
-    border: 1px solid #000000;
-    z-index: 40;
-    border-radius: 10px 0 0 0;
-}
-
-.lugares-1a {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    position: absolute;
-    width: 89px;
-    height: 17px;
-    top: 0;
-    left: 5.5px;
-    color: #000000;
-    font-family: Red Hat Display, var(--default-font-family);
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 17px;
-    text-align: center;
-    white-space: nowrap;
-    letter-spacing: 4.03px;
-    z-index: 41;
-}
-
-.descricao-1b {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: nowrap;
-    gap: 10px;
-    position: relative;
-    width: 228px;
-    margin: 0 0 0 -1px;
-    padding: 2px 26px 2px 26px;
-    background: #ffffff;
-    border: 1px solid #000000;
-    z-index: 38;
-    overflow: hidden;
-    box-sizing: content-box;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-}
-
-.laboratorio-de-computacao {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-shrink: 0;
-    position: relative;
-    width: 176px;
-    height: 69px;
-    color: #000000;
-    font-family: Yantramanav, var(--default-font-family);
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 23.344px;
-    text-align: center;
-    letter-spacing: 4.03px;
-    z-index: 39;
-}
-
-.pasta-labs-1c {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    flex-wrap: nowrap;
-    flex-shrink: 0;
-    gap: 10px;
-    position: relative;
-    width: 226px;
-    z-index: 44;
-}
-
-.botao-lab-1d {
-    align-self: stretch;
-    flex-shrink: 0;
-    position: relative;
-    min-width: 0;
-    height: 146px;
-    background: url(../assets/images/b642ef98834e3fe50fc39200de27aa16b78b8b7f.png) no-repeat center;
-    background-size: cover;
-    z-index: 45;
-    overflow: hidden;
-    border-radius: 20px 0 20px 0;
-    box-sizing: content-box;
-}
-
-.id-sala-1e {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: nowrap;
-    gap: 10px;
-    position: relative;
-    width: 110px;
-    height: 29px;
-    margin: -1px 0 0 0;
-    padding: 10px 10px 10px 10px;
-    background: #b7b1b1;
-    border: 1px solid #000000;
-    z-index: 50;
-    border-radius: 20px 0 20px 0;
-}
-
-.sala-1f {
-    flex-shrink: 0;
-    flex-basis: auto;
-    position: relative;
-    height: 26px;
-    color: #000000;
-    font-family: Yantramanav, var(--default-font-family);
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 25.938px;
-    text-align: left;
-    white-space: nowrap;
-    letter-spacing: 4.03px;
-    z-index: 51;
-}
-
-.num-de-lugares-20 {
-    position: relative;
-    width: 102px;
-    height: 23px;
-    margin: 22px 0 0 125px;
-    background: #4ea151;
-    border: 1px solid #000000;
-    z-index: 48;
-    border-radius: 10px 0 0 0;
-}
-
-.lugares-21 {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    position: absolute;
-    width: 89px;
-    height: 17px;
-    top: 0;
-    left: 5.5px;
-    color: #000000;
-    font-family: Red Hat Display, var(--default-font-family);
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 17px;
-    text-align: center;
-    white-space: nowrap;
-    letter-spacing: 4.03px;
-    z-index: 49;
-}
-
-.descricao-22 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: nowrap;
-    gap: 10px;
-    position: relative;
-    width: 228px;
-    margin: 0 0 0 -1px;
-    padding: 2px 26px 2px 26px;
-    background: #ffffff;
-    border: 1px solid #000000;
-    z-index: 46;
-    overflow: hidden;
-    box-sizing: content-box;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-}
-
-.laboratorio-de-computacao-23 {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-shrink: 0;
-    position: relative;
-    width: 176px;
-    height: 69px;
-    color: #000000;
-    font-family: Yantramanav, var(--default-font-family);
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 23.344px;
-    text-align: center;
-    letter-spacing: 4.03px;
-    z-index: 47;
-}
-
-.pasta-labs-24 {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    flex-wrap: nowrap;
-    flex-shrink: 0;
-    gap: 10px;
-    position: relative;
-    width: 226px;
-    z-index: 52;
-}
-
-.botao-lab-25 {
-    align-self: stretch;
-    flex-shrink: 0;
-    position: relative;
-    min-width: 0;
-    height: 146px;
-    background: url(../assets/images/b642ef98834e3fe50fc39200de27aa16b78b8b7f.png) no-repeat center;
-    background-size: cover;
-    z-index: 53;
-    overflow: hidden;
-    border-radius: 20px 0 20px 0;
-    box-sizing: content-box;
-}
-
-.id-sala-26 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: nowrap;
-    gap: 10px;
-    position: relative;
-    width: 110px;
-    height: 29px;
-    margin: -1px 0 0 0;
-    padding: 10px 10px 10px 10px;
-    background: #b7b1b1;
-    border: 1px solid #000000;
-    z-index: 58;
-    border-radius: 20px 0 20px 0;
-}
-
-.sala-27 {
-    flex-shrink: 0;
-    flex-basis: auto;
-    position: relative;
-    height: 26px;
-    color: #000000;
-    font-family: Yantramanav, var(--default-font-family);
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 25.938px;
-    text-align: left;
-    white-space: nowrap;
-    letter-spacing: 4.03px;
-    z-index: 59;
-}
-
-.num-de-lugares-28 {
-    position: relative;
-    width: 102px;
-    height: 23px;
-    margin: 22px 0 0 125px;
-    background: #4ea151;
-    border: 1px solid #000000;
-    z-index: 56;
-    border-radius: 10px 0 0 0;
-}
-
-.lugares-29 {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    position: absolute;
-    width: 89px;
-    height: 17px;
-    top: 0;
-    left: 5.5px;
-    color: #000000;
-    font-family: Red Hat Display, var(--default-font-family);
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 17px;
-    text-align: center;
-    white-space: nowrap;
-    letter-spacing: 4.03px;
-    z-index: 57;
-}
-
-.descricao-2a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: nowrap;
-    gap: 10px;
-    position: relative;
-    width: 228px;
-    margin: 0 0 0 -1px;
-    padding: 2px 26px 2px 26px;
-    background: #ffffff;
-    border: 1px solid #000000;
-    z-index: 54;
-    overflow: hidden;
-    box-sizing: content-box;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-}
-
-.laboratorio-de-computacao-2b {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-shrink: 0;
-    position: relative;
-    width: 176px;
-    height: 69px;
-    color: #000000;
-    font-family: Yantramanav, var(--default-font-family);
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 23.344px;
-    text-align: center;
-    letter-spacing: 4.03px;
-    z-index: 55;
-}
-
-.pasta-labs-2c {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    flex-wrap: nowrap;
-    flex-shrink: 0;
-    gap: 10px;
-    position: relative;
-    width: 226px;
-    z-index: 60;
-}
-
-.botao-lab-2d {
-    align-self: stretch;
-    flex-shrink: 0;
-    position: relative;
-    min-width: 0;
-    height: 146px;
-    background: url(../assets/images/b642ef98834e3fe50fc39200de27aa16b78b8b7f.png) no-repeat center;
-    background-size: cover;
-    z-index: 61;
-    overflow: hidden;
-    border-radius: 20px 0 20px 0;
-    box-sizing: content-box;
-}
-
-.id-sala-2e {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: nowrap;
-    gap: 10px;
-    position: relative;
-    width: 110px;
-    height: 29px;
-    margin: -1px 0 0 0;
-    padding: 10px 10px 10px 10px;
-    background: #b7b1b1;
-    border: 1px solid #000000;
-    z-index: 66;
-    border-radius: 20px 0 20px 0;
-}
-
-.sala-24-2f {
-    flex-shrink: 0;
-    flex-basis: auto;
-    position: relative;
-    height: 26px;
-    color: #000000;
-    font-family: Yantramanav, var(--default-font-family);
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 25.938px;
-    text-align: left;
-    white-space: nowrap;
-    letter-spacing: 4.03px;
-    z-index: 67;
-}
-
-.num-de-lugares-30 {
-    position: relative;
-    width: 102px;
-    height: 23px;
-    margin: 22px 0 0 125px;
-    background: #4ea151;
-    border: 1px solid #000000;
-    z-index: 64;
-    border-radius: 10px 0 0 0;
-}
-
-.lugares-30-31 {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    position: absolute;
-    width: 89px;
-    height: 17px;
-    top: 0;
-    left: 5.5px;
-    color: #000000;
-    font-family: Red Hat Display, var(--default-font-family);
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 17px;
-    text-align: center;
-    white-space: nowrap;
-    letter-spacing: 4.03px;
-    z-index: 65;
-}
-
-.descricao-32 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: nowrap;
-    gap: 10px;
-    position: relative;
-    width: 228px;
-    margin: 0 0 0 -1px;
-    padding: 2px 26px 2px 26px;
-    background: #ffffff;
-    border: 1px solid #000000;
-    z-index: 62;
-    overflow: hidden;
-    box-sizing: content-box;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-}
-
-.laboratorio-de-computacao-33 {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-shrink: 0;
-    position: relative;
-    width: 176px;
-    height: 69px;
-    color: #000000;
-    font-family: Yantramanav, var(--default-font-family);
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 23.344px;
-    text-align: center;
-    letter-spacing: 4.03px;
-    z-index: 63;
-}
-
-.flex-row-f {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    width: 994px;
-    height: 146px;
-    margin: 51px 0 0 24px;
-    z-index: 92;
-}
-
-.pasta-labs-34 {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    flex-wrap: nowrap;
-    flex-shrink: 0;
-    gap: 10px;
-    position: relative;
-    width: 226px;
-    z-index: 68;
-}
-
-.botao-lab-35 {
-    align-self: stretch;
-    flex-shrink: 0;
-    position: relative;
-    min-width: 0;
-    height: 146px;
-    background: url(../assets/images/b642ef98834e3fe50fc39200de27aa16b78b8b7f.png) no-repeat center;
-    background-size: cover;
-    z-index: 69;
-    overflow: hidden;
-    border-radius: 20px 0 20px 0;
-    box-sizing: content-box;
-}
-
-.id-sala-36 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: nowrap;
-    gap: 10px;
-    position: relative;
-    width: 110px;
-    height: 29px;
-    margin: -1px 0 0 0;
-    padding: 10px 10px 10px 10px;
-    background: #b7b1b1;
-    border: 1px solid #000000;
-    z-index: 74;
-    border-radius: 20px 0 20px 0;
-}
-
-.sala-24-37 {
-    flex-shrink: 0;
-    flex-basis: auto;
-    position: relative;
-    height: 26px;
-    color: #000000;
-    font-family: Yantramanav, var(--default-font-family);
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 25.938px;
-    text-align: left;
-    white-space: nowrap;
-    letter-spacing: 4.03px;
-    z-index: 75;
-}
-
-.num-de-lugares-38 {
-    position: relative;
-    width: 102px;
-    height: 23px;
-    margin: 22px 0 0 125px;
-    background: #4ea151;
-    border: 1px solid #000000;
-    z-index: 72;
-    border-radius: 10px 0 0 0;
-}
-
-.lugares-30-39 {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    position: absolute;
-    width: 89px;
-    height: 17px;
-    top: 0;
-    left: 5.5px;
-    color: #000000;
-    font-family: Red Hat Display, var(--default-font-family);
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 17px;
-    text-align: center;
-    white-space: nowrap;
-    letter-spacing: 4.03px;
-    z-index: 73;
-}
-
-.descricao-3a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: nowrap;
-    gap: 10px;
-    position: relative;
-    width: 228px;
-    margin: 0 0 0 -1px;
-    padding: 2px 26px 2px 26px;
-    background: #ffffff;
-    border: 1px solid #000000;
-    z-index: 70;
-    overflow: hidden;
-    box-sizing: content-box;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-}
-
-.laboratorio-de-computacao-3b {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-shrink: 0;
-    position: relative;
-    width: 176px;
-    height: 69px;
-    color: #000000;
-    font-family: Yantramanav, var(--default-font-family);
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 23.344px;
-    text-align: center;
-    letter-spacing: 4.03px;
-    z-index: 71;
-}
-
-.pasta-labs-3c {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    flex-wrap: nowrap;
-    flex-shrink: 0;
-    gap: 10px;
-    position: relative;
-    width: 226px;
-    z-index: 76;
-}
-
-.botao-lab-3d {
-    align-self: stretch;
-    flex-shrink: 0;
-    position: relative;
-    min-width: 0;
-    height: 146px;
-    background: url(../assets/images/b642ef98834e3fe50fc39200de27aa16b78b8b7f.png) no-repeat center;
-    background-size: cover;
-    z-index: 77;
-    overflow: hidden;
-    border-radius: 20px 0 20px 0;
-    box-sizing: content-box;
-}
-
-.id-sala-3e {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: nowrap;
-    gap: 10px;
-    position: relative;
-    width: 110px;
-    height: 29px;
-    margin: -1px 0 0 0;
-    padding: 10px 10px 10px 10px;
-    background: #b7b1b1;
-    border: 1px solid #000000;
-    z-index: 82;
-    border-radius: 20px 0 20px 0;
-}
-
-.sala-24-3f {
-    flex-shrink: 0;
-    flex-basis: auto;
-    position: relative;
-    height: 26px;
-    color: #000000;
-    font-family: Yantramanav, var(--default-font-family);
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 25.938px;
-    text-align: left;
-    white-space: nowrap;
-    letter-spacing: 4.03px;
-    z-index: 83;
-}
-
-.num-de-lugares-40 {
-    position: relative;
-    width: 102px;
-    height: 23px;
-    margin: 22px 0 0 125px;
-    background: #4ea151;
-    border: 1px solid #000000;
-    z-index: 80;
-    border-radius: 10px 0 0 0;
-}
-
-.lab-computing {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    position: absolute;
-    width: 89px;
-    height: 17px;
-    top: 0;
-    left: 5.5px;
-    color: #000000;
-    font-family: Red Hat Display, var(--default-font-family);
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 17px;
-    text-align: center;
-    white-space: nowrap;
-    letter-spacing: 4.03px;
-    z-index: 81;
-}
-
-.description {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: nowrap;
-    gap: 10px;
-    position: relative;
-    width: 228px;
-    margin: 0 0 0 -1px;
-    padding: 2px 26px 2px 26px;
-    background: #ffffff;
-    border: 1px solid #000000;
-    z-index: 78;
-    overflow: hidden;
-    box-sizing: content-box;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-}
-
-.lab-computing-41 {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-shrink: 0;
-    position: relative;
-    width: 176px;
-    height: 69px;
-    color: #000000;
-    font-family: Yantramanav, var(--default-font-family);
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 23.344px;
-    text-align: center;
-    letter-spacing: 4.03px;
-    z-index: 79;
-}
-
-.pasta-labs-42 {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    flex-wrap: nowrap;
-    flex-shrink: 0;
-    gap: 10px;
-    position: relative;
-    width: 226px;
-    z-index: 84;
-}
-
-.botao-lab-43 {
-    align-self: stretch;
-    flex-shrink: 0;
-    position: relative;
-    min-width: 0;
-    height: 146px;
-    background: url(../assets/images/b642ef98834e3fe50fc39200de27aa16b78b8b7f.png) no-repeat center;
-    background-size: cover;
-    z-index: 85;
-    overflow: hidden;
-    border-radius: 20px 0 20px 0;
-    box-sizing: content-box;
-}
-
-.id-sala-44 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: nowrap;
-    gap: 10px;
-    position: relative;
-    width: 110px;
-    height: 29px;
-    margin: -1px 0 0 0;
-    padding: 10px 10px 10px 10px;
-    background: #b7b1b1;
-    border: 1px solid #000000;
-    z-index: 90;
-    border-radius: 20px 0 20px 0;
-}
-
-.sala-24-45 {
-    flex-shrink: 0;
-    flex-basis: auto;
-    position: relative;
-    height: 26px;
-    color: #000000;
-    font-family: Yantramanav, var(--default-font-family);
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 25.938px;
-    text-align: left;
-    white-space: nowrap;
-    letter-spacing: 4.03px;
-    z-index: 91;
-}
-
-.num-lugares-46 {
-    position: relative;
-    width: 102px;
-    height: 23px;
-    margin: 22px 0 0 125px;
-    background: #4ea151;
-    border: 1px solid #000000;
-    z-index: 88;
-    border-radius: 10px 0 0 0;
-}
-
-.lab-computing-47 {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    position: absolute;
-    width: 89px;
-    height: 17px;
-    top: 0;
-    left: 5.5px;
-    color: #000000;
-    font-family: Red Hat Display, var(--default-font-family);
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 17px;
-    text-align: center;
-    white-space: nowrap;
-    letter-spacing: 4.03px;
-    z-index: 89;
-}
-
-.description-48 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: nowrap;
-    gap: 10px;
-    position: relative;
-    width: 228px;
-    margin: 0 0 0 -1px;
-    padding: 2px 26px 2px 26px;
-    background: #ffffff;
-    border: 1px solid #000000;
-    z-index: 86;
-    overflow: hidden;
-    box-sizing: content-box;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-}
-
-.lab-computing-49 {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-shrink: 0;
-    position: relative;
-    width: 176px;
-    height: 69px;
-    color: #000000;
-    font-family: Yantramanav, var(--default-font-family);
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 23.344px;
-    text-align: center;
-    letter-spacing: 4.03px;
-    z-index: 87;
-}
-
-.pasta-labs-4a {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    flex-wrap: nowrap;
-    flex-shrink: 0;
-    gap: 10px;
-    position: relative;
-    width: 226px;
-    z-index: 92;
-}
-
-.botao-lab-4b {
-    align-self: stretch;
-    flex-shrink: 0;
-    position: relative;
-    min-width: 0;
-    height: 146px;
-    background: url(../assets/images/b642ef98834e3fe50fc39200de27aa16b78b8b7f.png) no-repeat center;
-    background-size: cover;
-    z-index: 93;
-    overflow: hidden;
-    border-radius: 20px 0 20px 0;
-    box-sizing: content-box;
-}
-
-.id-sala-4c {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: nowrap;
-    gap: 10px;
-    position: relative;
-    width: 110px;
-    height: 29px;
-    margin: -1px 0 0 0;
-    padding: 10px 10px 10px 10px;
-    background: #b7b1b1;
-    border: 1px solid #000000;
-    z-index: 98;
-    border-radius: 20px 0 20px 0;
-}
-
-.sala-24-4d {
-    flex-shrink: 0;
-    flex-basis: auto;
-    position: relative;
-    height: 26px;
-    color: #000000;
-    font-family: Yantramanav, var(--default-font-family);
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 25.938px;
-    text-align: left;
-    white-space: nowrap;
-    letter-spacing: 4.03px;
-    z-index: 99;
-}
-
-.num-lugares-4e {
-    position: relative;
-    width: 102px;
-    height: 23px;
-    margin: 22px 0 0 125px;
-    background: #4ea151;
-    border: 1px solid #000000;
-    z-index: 96;
-    border-radius: 10px 0 0 0;
-}
-
-.lab-computing-4f {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    position: absolute;
-    width: 89px;
-    height: 17px;
-    top: 0;
-    left: 5.5px;
-    color: #000000;
-    font-family: Red Hat Display, var(--default-font-family);
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 17px;
-    text-align: center;
-    white-space: nowrap;
-    letter-spacing: 4.03px;
-    z-index: 97;
-}
-
-.description-50 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: nowrap;
-    gap: 10px;
-    position: relative;
-    width: 228px;
-    margin: 0 0 0 -1px;
-    padding: 2px 26px 2px 26px;
-    background: #ffffff;
-    border: 1px solid #000000;
-    z-index: 94;
-    overflow: hidden;
-    box-sizing: content-box;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-}
-
-.lab-computing-51 {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-shrink: 0;
-    position: relative;
-    width: 176px;
-    height: 69px;
-    color: #000000;
-    font-family: Yantramanav, var(--default-font-family);
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 23.344px;
-    text-align: center;
-    letter-spacing: 4.03px;
-    z-index: 95;
-}
-
+/* ELEMENTOS DE FUNDO */
 .image {
     position: absolute;
     width: 1440px;
     height: 1024px;
     top: -2px;
     left: -2px;
-    background: url(../assets/images/705a0b0a7d81bbd83f0eb96b5af38bf6f5511cff.png) no-repeat center;
     background-size: cover;
+    z-index: -1;
 }

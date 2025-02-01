@@ -8,7 +8,7 @@ export default function Main() {
             <div className="barra-superior" />
             <div className="telas-brancas">
                 <div className="flex-row">
-                    <div className="logo-unifesspa" />
+                    <div className="logo-unifesspa-login" />
                     <span className="login-1">Login</span>
                 </div>
                 <span className="lab-management">
@@ -36,7 +36,7 @@ export default function Main() {
                     <span className="realizar-cadastro">realizar cadastro</span>
                 </Link>
             </div>
-            <div className="image" />
+            <div className="image-login" />
         </div>
     );
 }

@@ -8,9 +8,10 @@ export default function Main() {
             <div className="barra-superior" />
             <div className="tela-branca">
                 <div className="flex-row-f">
-                    <div className="botao-voltar">
+                    <Link to="/login" className="botao-voltar">
+
                         <div className="botao-voltar-1" />
-                    </div>
+                    </Link>
                     <div className="logo-unifesspa" />
                 </div>
                 <span className="cadastro">Cadastro</span>

@@ -76,7 +76,7 @@ button {
     height: 100%;
     top: 0;
     left: 0;
-    background: url(../assets/images/ee07e38e-bf59-49dc-9996-283dd848a7e8.png) no-repeat center;
+    background: url(assets/images/09d587e5-4a53-4776-b388-84715529366c.png) no-repeat center;
     background-size: 100% 100%;
     z-index: 30;
 }
@@ -97,7 +97,7 @@ button {
     display: block;
     position: relative;
     height: 61px;
-    margin: 2px 0 0 449px;
+    margin: 0 0 0 490px;
     color: #354446;
     font-family: Red Hat Mono, var(--default-font-family);
     font-size: 36px;
@@ -376,46 +376,29 @@ button {
 }
 
 .botao-cadastrar {
-    position: absolute;
-    width: 477px;
+    position: relative;
+    width: 280px;
     height: 40px;
-    margin: 36px 0 0 340px;
     cursor: pointer;
-    font-size: 0px;
-    background: transparent;
+    background: #1e8e3e;
     border: none;
     z-index: 3;
-    overflow: visible auto;
-}
-
-.cadastrar {
+    overflow: hidden;
+    border-radius: 6px;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-    width: 280px;
-    height: 20px;
-    margin: 0px 0 0 0px;
+    margin: 50px 0 0 450px;
+}
+
+.cadastrar {
     color: #ffffff;
-    font-family: Red Hat Mono, var(--default-font-family);
+    font-family: "Red Hat Mono", var(--default-font-family);
     font-size: 17px;
     font-weight: 400;
     line-height: 19px;
-    text-align: center;
     text-transform: uppercase;
     white-space: nowrap;
-    z-index: 5;
-}
-
-.retangulo-verde {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: #1e8e3e;
-    z-index: 4;
-    border-radius: 6px;
 }
 
 .back-ground {
