@@ -1,0 +1,89 @@
+:root {
+    --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+        "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
+        "Source Han Sans CN", sans-serif;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+        /* Começa 20px acima */
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        /* Termina na posição original */
+    }
+}
+
+.aba-opcoes-container {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 384px;
+    background: #0f6829;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    overflow: hidden;
+    animation: slideDown 0.3s ease-out;
+}
+
+.opcao-botao {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 83px;
+    margin: 0;
+    padding: 0;
+    background: #18933c;
+    border: #10451f;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    text-decoration: none;
+}
+
+.opcao-botao:hover {
+    background: #1a7d37;
+}
+
+.opcao-frame {
+    position: absolute;
+    width: 10px;
+    height: 100%;
+    left: 0;
+    background: #10451f;
+    z-index: 1;
+}
+
+.opcao-botao span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: #ffffff;
+    font-family: Red Hat Mono, var(--default-font-family);
+    font-size: 32px;
+    font-weight: 500;
+    text-transform: uppercase;
+    white-space: nowrap;
+    z-index: 2;
+    padding-left: 20px;
+}
+
+/* Classes específicas para ajustes individuais */
+.ver-reservas span {
+    font-size: 28px;
+    justify-content: flex-start;
+    padding-left: 30px;
+}
+
+.sair span {
+    justify-content: center;
+    padding-left: 0;
+}

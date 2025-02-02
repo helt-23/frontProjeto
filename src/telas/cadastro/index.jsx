@@ -9,70 +9,77 @@ export default function Main() {
             <div className="tela-branca">
                 <div className="flex-row-f">
                     <Link to="/login" className="botao-voltar">
-
-                        <div className="botao-voltar-1" />
+                        <div className="botao-voltar-cadastro" />
                     </Link>
-                    <div className="logo-unifesspa" />
+                    <div className="logo-unifesspa-cadastro" />
                 </div>
                 <span className="cadastro">Cadastro</span>
-                <div className="bloco-nome">
-                    <span className="nome">Nome:</span>
+
+                {/* Campos Ajustados */}
+                <div className="form-field-container bloco-nome">
+                    <span className="form-label">Nome:</span>
                     <input
                         type="text"
-                        className="input-nome"
+                        className="form-input"
                         placeholder="Digite seu nome"
                     />
                 </div>
-                <div className="bloco-sobrenome">
-                    <span className="sobrenome">Sobrenome:</span>
+
+                <div className="form-field-container bloco-sobrenome">
+                    <span className="form-label">Sobrenome:</span>
                     <input
                         type="text"
-                        className="input-sobrenome"
+                        className="form-input"
                         placeholder="Digite seu sobrenome"
                     />
                 </div>
-                <div className="bloco-matricula">
-                    <span className="matricula">Matrícula:</span>
+
+                <div className="form-field-container bloco-matricula">
+                    <span className="form-label">Matrícula:</span>
                     <input
                         type="text"
-                        className="input-matricula"
+                        className="form-input"
                         placeholder="Digite sua matrícula"
                     />
                 </div>
-                <div className="bloco-curso">
-                    <span className="curso">Curso:</span>
+
+                <div className="form-field-container bloco-curso">
+                    <span className="form-label">Curso:</span>
                     <input
                         type="text"
-                        className="input-curso"
+                        className="form-input"
                         placeholder="Digite seu curso"
                     />
                 </div>
-                <div className="bloco-senha">
-                    <span className="span-senha">Senha:</span>
+
+                <div className="form-field-container bloco-senha">
+                    <span className="form-label">Senha:</span>
                     <input
                         type="password"
-                        className="input-senha"
-                        placeholder="Crie uma senha"
+                        className="form-input"
+                        placeholder="Crie uma senha segura"
                     />
                 </div>
-                <div className="bloco-confirmacao">
-                    <span className="span-confirmar-senha">Confirme a senha:</span>
+
+                <div className="form-field-container bloco-confirmacao">
+                    <span className="form-label">Confirme a Senha:</span>
                     <input
                         type="password"
-                        className="input-confirmar"
+                        className="form-input"
                         placeholder="Repita a senha"
                     />
                 </div>
-                <div className="bloco-data">
-                    <span className="span-data-nascimento">Data de Nascimento:</span>
+
+                <div className="form-field-container bloco-data">
+                    <span className="form-label">Data de Nascimento:</span>
                     <input
                         type="date"
-                        className="input-data"
+                        className="form-input"
                     />
                 </div>
+
                 <Link to="/login" className="botao-cadastrar">
                     <span className="cadastrar">Cadastrar</span>
-                    <div className="retangulo-verde" />
                 </Link>
             </div>
             <div className="back-ground" />

@@ -1,64 +1,51 @@
 :root {
-    --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-        Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+    --default-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu,
+        "Helvetica Neue", Helvetica, Arial, "PingFang SC",
         "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
         "Source Han Sans CN", sans-serif;
+    --primary-green: #0f6829;
+    --secondary-green: #1e8e3e;
+    --dark-text: #354446;
+    --input-bg: #d9d9d9;
+    --transparent-black: rgba(0, 0, 0, 0.44);
 }
 
+/* Estrutura Principal */
 .main-container {
-    overflow: hidden;
-}
-
-.main-container,
-.main-container * {
-    box-sizing: border-box;
-}
-
-input,
-select,
-textarea,
-button {
-    outline: 0;
-}
-
-.main-container {
-    position: relative;
     width: 1440px;
     height: 1024px;
     margin: 0 auto;
     overflow: hidden;
+    position: relative;
 }
 
 .barra-superior {
-    position: relative;
     width: 1440px;
     height: 50px;
-    margin: 0 0 0 0;
-    background: #0f6829;
-    border: 1px solid #000000;
+    background: var(--primary-green);
+    border: 1px solid #000;
     z-index: 1;
-    overflow: hidden;
 }
 
+/* Container do Formulário */
 .tela-branca {
-    position: relative;
     width: 1156px;
     height: 752px;
     margin: 99px 0 0 142px;
-    background: #ffffff;
-    border: 2px solid #000000;
-    z-index: 2;
-    overflow: hidden;
+    background: #fff;
+    border: 2px solid #000;
     border-radius: 10px;
     box-shadow: 0 4px 4px 0 rgba(12, 12, 13, 0.05);
+    position: relative;
+    z-index: 2;
 }
 
+/* Cabeçalho */
 .flex-row-f {
     position: relative;
     width: 1054px;
     height: 69px;
     margin: 42px 0 0 48px;
-    z-index: 29;
 }
 
 .botao-voltar {
@@ -70,18 +57,14 @@ button {
     z-index: 29;
 }
 
-.botao-voltar-1 {
-    position: absolute;
+.botao-voltar-cadastro {
     width: 100%;
     height: 100%;
-    top: 0;
-    left: 0;
     background: url(assets/images/09d587e5-4a53-4776-b388-84715529366c.png) no-repeat center;
     background-size: 100% 100%;
-    z-index: 30;
 }
 
-.logo-unifesspa {
+.logo-unifesspa-cadastro {
     position: absolute;
     width: 69px;
     height: 69px;
@@ -89,318 +72,91 @@ button {
     left: 985px;
     background: url(../assets/images/70672ce5848878a5f7f6c8586ae7e6be78a25b89.png) no-repeat center;
     background-size: cover;
-    z-index: 7;
     border-radius: 34.5px;
+    z-index: 7;
 }
 
 .cadastro {
     display: block;
-    position: relative;
     height: 61px;
     margin: 0 0 0 490px;
-    color: #354446;
-    font-family: Red Hat Mono, var(--default-font-family);
+    color: var(--dark-text);
+    font-family: 'Red Hat Mono', var(--default-font);
     font-size: 36px;
-    font-weight: 400;
     line-height: 47.628px;
-    text-align: left;
-    white-space: nowrap;
     letter-spacing: 4.03px;
-    z-index: 6;
 }
 
-.bloco-nome {
-    position: relative;
-    width: 544.168px;
-    height: 27px;
-    margin: 37px 0 0 325.832px;
-    z-index: 8;
-}
-
-.input-nome {
-    position: absolute;
-    width: 87.66%;
-    height: 100%;
-    top: 0;
-    left: 12.34%;
-    background: #d9d9d9;
-    border: 1px solid #000000;
-    z-index: 9;
-    border-radius: 5px;
-}
-
-.nome {
+/* Campos do Formulário Ajustados */
+.form-field-container {
     display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
-    position: absolute;
-    height: 92.58%;
-    top: 0;
-    left: 0;
-    color: rgba(0, 0, 0, 0.44);
-    font-family: Red Hat Mono, var(--default-font-family);
-    font-size: 17.925521850585938px;
-    font-weight: 400;
-    line-height: 23.715px;
-    text-align: left;
-    white-space: nowrap;
-    z-index: 10;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
-.bloco-sobrenome {
-    position: relative;
-    width: 594.986px;
-    height: 27px;
-    margin: 19px 0 0 276.014px;
-    z-index: 20;
+.form-label {
+    color: var(--transparent-black);
+    font-family: 'Red Hat Mono', var(--default-font);
+    font-size: 18px;
+    width: 150px;
+    text-align: right;
+    padding-right: 10px;
 }
 
-.input-sobrenome {
-    position: absolute;
-    width: 80.17%;
-    height: 100%;
-    top: 0;
-    left: 19.83%;
-    background: #d9d9d9;
-    border: 1px solid #000000;
-    z-index: 21;
+.form-input {
+    background: var(--input-bg);
+    border: 2px solid #000;
     border-radius: 5px;
+    height: 35px;
+    font-size: 16px;
+    padding: 8px 12px;
+    flex-grow: 1;
 }
 
-.sobrenome {
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
-    position: absolute;
-    height: 92.58%;
-    top: 7.41%;
-    left: 0;
-    color: rgba(0, 0, 0, 0.44);
-    font-family: Red Hat Mono, var(--default-font-family);
-    font-size: 17.925521850585938px;
-    font-weight: 400;
-    line-height: 23.715px;
-    text-align: left;
-    white-space: nowrap;
-    z-index: 22;
-}
 
-.bloco-matricula {
-    position: relative;
-    width: 593.986px;
-    height: 27px;
-    margin: 26px 0 0 276.014px;
-    z-index: 23;
-}
-
-.input-matricula {
-    position: absolute;
-    width: 80.3%;
-    height: 100%;
-    top: 0;
-    left: 19.7%;
-    background: #d9d9d9;
-    border: 1px solid #000000;
-    z-index: 25;
-    border-radius: 5px;
-}
-
-.matricula {
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
-    position: absolute;
-    height: 92.58%;
-    top: 7.41%;
-    left: 0;
-    color: rgba(0, 0, 0, 0.44);
-    font-family: Red Hat Mono, var(--default-font-family);
-    font-size: 17.925521850585938px;
-    font-weight: 400;
-    line-height: 23.715px;
-    text-align: left;
-    white-space: nowrap;
-    z-index: 24;
-}
-
-.bloco-curso {
-    position: relative;
-    width: 553.748px;
-    height: 27px;
-    margin: 28px 0 0 316.252px;
-    z-index: 11;
-}
-
-.input-curso {
-    position: absolute;
-    width: 86.14%;
-    height: 100%;
-    top: 0;
-    left: 13.86%;
-    background: #d9d9d9;
-    border: 1px solid #000000;
-    z-index: 12;
-    border-radius: 5px;
-}
-
-.curso {
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
-    position: absolute;
-    height: 92.58%;
-    top: 0;
-    left: 0;
-    color: rgba(0, 0, 0, 0.44);
-    font-family: Red Hat Mono, var(--default-font-family);
-    font-size: 17.925521850585938px;
-    font-weight: 400;
-    line-height: 23.715px;
-    text-align: left;
-    white-space: nowrap;
-    z-index: 13;
-}
-
+/* Ajustes Específicos de Posicionamento */
+.bloco-nome,
+.bloco-sobrenome,
+.bloco-matricula,
+.bloco-curso,
 .bloco-senha {
-    position: relative;
-    width: 553.748px;
-    height: 27px;
-    margin: 24px 0 0 316.252px;
-    z-index: 14;
-}
-
-.input-senha {
-    position: absolute;
-    width: 86.14%;
-    height: 100%;
-    top: 0;
-    left: 13.86%;
-    background: #d9d9d9;
-    border: 1px solid #000000;
-    z-index: 15;
-    border-radius: 5px;
-}
-
-.span-senha {
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
-    position: absolute;
-    height: 92.58%;
-    top: 0;
-    left: 0;
-    color: rgba(0, 0, 0, 0.44);
-    font-family: Red Hat Mono, var(--default-font-family);
-    font-size: 17.925521850585938px;
-    font-weight: 400;
-    line-height: 23.715px;
-    text-align: left;
-    white-space: nowrap;
-    z-index: 16;
+    width: 700px;
+    margin-left: 250px !important;
 }
 
 .bloco-confirmacao {
-    position: relative;
-    width: 669px;
-    height: 27px;
-    margin: 28px 0 0 202px;
-    z-index: 17;
-}
-
-.input-confirmar {
-    position: absolute;
-    width: 71.3%;
-    height: 100%;
-    top: 0;
-    left: 28.7%;
-    background: #d9d9d9;
-    border: 1px solid #000000;
-    z-index: 18;
-    border-radius: 5px;
-}
-
-.span-confirmar-senha {
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
-    position: absolute;
-    height: 92.59%;
-    top: 0;
-    left: 0;
-    color: rgba(0, 0, 0, 0.44);
-    font-family: Red Hat Mono, var(--default-font-family);
-    font-size: 17.925521850585938px;
-    font-weight: 400;
-    line-height: 23.715px;
-    text-align: left;
-    white-space: nowrap;
-    z-index: 19;
+    width: 750px;
+    margin-left: 200px !important;
 }
 
 .bloco-data {
-    position: relative;
-    width: 685px;
-    height: 27px;
-    margin: 36px 0 0 185px;
-    z-index: 26;
+    width: 750px;
+    margin-left: 180px !important;
 }
 
-.span-data-nascimento {
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-start;
-    position: absolute;
-    height: 92.59%;
-    top: 0;
-    left: 0;
-    color: rgba(0, 0, 0, 0.44);
-    font-family: Red Hat Mono, var(--default-font-family);
-    font-size: 17.925521850585938px;
-    font-weight: 400;
-    line-height: 23.715px;
-    text-align: left;
-    white-space: nowrap;
-    z-index: 27;
-}
-
-.input-data {
-    position: absolute;
-    width: 69.64%;
-    height: 100%;
-    top: 0;
-    left: 30.36%;
-    background: #d9d9d9;
-    border: 1px solid #000000;
-    z-index: 28;
-    border-radius: 5px;
-}
-
+/* Botão de Cadastro Ajustado */
 .botao-cadastrar {
-    position: relative;
-    width: 280px;
-    height: 40px;
-    cursor: pointer;
-    background: #1e8e3e;
-    border: none;
-    z-index: 3;
-    overflow: hidden;
+    width: 300px;
+    height: 45px;
+    /* Altura ajustada */
+    background: var(--secondary-green);
     border-radius: 6px;
+    margin: 40px 0 0 420px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 50px 0 0 450px;
+    cursor: pointer;
 }
 
 .cadastrar {
-    color: #ffffff;
-    font-family: "Red Hat Mono", var(--default-font-family);
-    font-size: 17px;
-    font-weight: 400;
-    line-height: 19px;
+    color: #fff;
+    font-family: 'Red Hat Mono', var(--default-font);
+    font-size: 18px;
+    /* Fonte ajustada */
     text-transform: uppercase;
-    white-space: nowrap;
 }
 
+/* Background */
 .back-ground {
     position: absolute;
     width: 1440px;

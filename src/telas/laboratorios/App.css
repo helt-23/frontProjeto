@@ -10,7 +10,7 @@
     background: #ffffff;
     border: 2px solid #000000;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-    overflow: hidden;
+    overflow: visible;
 }
 
 /* CABEÇALHO */
@@ -21,6 +21,7 @@
     background: #0f6829;
     border-bottom: 2px solid #000000;
     z-index: 101;
+    overflow: visible;
 }
 
 .botao-usuario {
@@ -32,6 +33,7 @@
     background: url(assets/images/a6aeff2f-505c-4ced-a9fc-2902a64b4bd6.png) no-repeat center;
     background-size: cover;
     z-index: 102;
+    cursor: pointer;
 }
 
 /* ÁREA PRINCIPAL */
@@ -40,7 +42,6 @@
     width: 1245px;
     height: 777px;
     margin: 75px 0 0 99px;
-    background: url(../assets/images/c71ac48d-df93-4167-a200-66ec2c70a90f.png) no-repeat center;
     background-size: cover;
     z-index: 1;
 }
