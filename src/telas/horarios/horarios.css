@@ -1,94 +1,154 @@
-/* Container principal */
-.lab-schedule-container {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 20px;
-    background: #fff;
+/* Reset básico e configuração global */
+* {
+    box-sizing: border-box;
 }
 
-.header {
-    text-align: center;
-    margin-bottom: 30px;
-    color: #0f6829;
-    padding: 20px;
-    border-bottom: 2px solid #0f6829;
-}
-
-/* Caixa de Descrição */
-.description-box {
-    background: #e8f5e9;
-    border: 2px solid #0f6829;
-    border-radius: 8px;
-    padding: 20px;
-    margin: 20px 0;
-}
-
-.description-box h2 {
-    color: #0f6829;
-    margin-bottom: 15px;
-    font-size: 1.5em;
-}
-
-.description-box p {
-    line-height: 1.6;
-    color: #333;
+body {
     margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: #e5e5e5;
+    /* Fundo acinzentado */
+    color: #333;
 }
 
-/* Tabela de Horários */
+/* Container principal ocupando toda a tela */
+.schedule-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.botao-voltar {
+    position: absolute;
+    bottom: 700px;
+    left: 50px;
+    width: 60px;
+    height: 58px;
+    background: url(../assets/images/09d587e5-4a53-4776-b388-84715529366c.png) no-repeat center;
+    background-size: contain;
+    cursor: pointer;
+    border: none;
+}
+
+/* Cabeçalho com gradiente e sombra */
+.schedule-header {
+    width: 100%;
+    background: linear-gradient(135deg, #0f6829, #094d1c);
+    padding: 40px 20px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.schedule-header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+/* Seção de descrição com destaque na borda */
+.description-section {
+    width: 100%;
+    max-width: 1200px;
+    background: #fff;
+    border-left: 5px solid #0f6829;
+    padding: 20px;
+    margin-top: -20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.description-section h2 {
+    margin-top: 0;
+    color: #0f6829;
+    font-size: 1.8em;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+
+/* Aumentando o tamanho da fonte da descrição */
+.description-section p {
+    line-height: 1.6;
+    margin: 10px 0 0;
+    font-size: 1.2em;
+}
+
+/* Seção da tabela com overflow para telas menores */
+.table-section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 40px auto;
+    overflow-x: auto;
+}
+
+/* Estilo da tabela */
 .schedule-table {
     width: 100%;
     border-collapse: collapse;
-    margin: 20px 0;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Alteração da borda para um tom um pouco mais escuro */
+.schedule-table th,
+.schedule-table td {
+    padding: 15px;
+    border: 1px solid #bbb;
+    text-align: center;
+    min-width: 100px;
 }
 
 .schedule-table th {
     background: #0f6829;
-    color: white;
-    padding: 15px;
-    text-align: center;
-    border: 1px solid #ddd;
+    color: #fff;
+    font-weight: 600;
 }
 
-.time-header {
-    background: #094d1c !important;
-}
-
+/* Célula de horário com fundo diferenciado */
 .time-cell {
     background: #f8f8f8;
-    padding: 15px;
-    text-align: center;
-    border: 1px solid #ddd;
-    font-weight: 500;
+    font-weight: 600;
 }
 
+/* Células disponíveis sem padding, para que o link ocupe todo o espaço */
 .available-cell {
     padding: 0;
-    border: 1px solid #ddd;
-    transition: all 0.2s;
+    transition: background 0.3s ease;
 }
 
+/* Link que ocupa toda a célula */
 .slot-link {
     display: block;
+    width: 100%;
+    height: 100%;
     padding: 15px;
     text-decoration: none;
-    color: #0f6829 !important;
+    color: #0f6829;
     background: #e8f5e9;
-    transition: all 0.2s;
+    transition: background 0.3s, color 0.3s;
 }
 
-.slot-link:hover {
+/* Efeito de hover aplicado à célula inteira */
+.available-cell:hover .slot-link {
     background: #0f6829;
-    color: white !important;
+    color: #fff;
     cursor: pointer;
 }
 
-/* Zebra striping para linhas */
-tbody tr:nth-child(even) .time-cell {
-    background: #f0f0f0;
-}
+/* Responsividade para telas menores */
+@media screen and (max-width: 768px) {
+    .schedule-header h1 {
+        font-size: 2em;
+    }
 
-tbody tr:nth-child(even) .slot-link {
-    background: #e0f0e0;
+    .description-section h2 {
+        font-size: 1.5em;
+    }
+
+    .schedule-table th,
+    .schedule-table td {
+        padding: 10px;
+        min-width: 80px;
+    }
 }

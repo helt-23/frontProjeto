@@ -1,8 +1,5 @@
 :root {
-    --default-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu,
-        "Helvetica Neue", Helvetica, Arial, "PingFang SC",
-        "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
-        "Source Han Sans CN", sans-serif;
+    --default-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, sans-serif;
     --primary-green: #0f6829;
     --secondary-green: #1e8e3e;
     --dark-text: #354446;
@@ -11,245 +8,140 @@
     --transparent-black: rgba(0, 0, 0, 0.44);
 }
 
-
-.main-container,
-.main-container * {
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-input,
-select,
-textarea,
-button {
-    outline: 0;
+html,
+body,
+#root {
+    height: 100%;
+    width: 100%;
+    font-family: var(--default-font);
 }
 
-.main-container {
-    position: relative;
-    width: 1440px;
-    height: 1024px;
-    margin: 0 auto;
+/* Container principal */
+.main-container-login {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
     background: #ffffff;
-    border: 1px solid var(--border-color);
     overflow: hidden;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
 
+/* Barra superior */
 .barra-superior {
-    position: relative;
-    width: 1440px;
+    width: 100%;
     height: 50px;
-    margin: 0;
     background: var(--primary-green);
-    border: 2px solid var(--border-color);
-    z-index: 14;
+    border-bottom: 2px solid var(--border-color);
 }
 
+/* Conteúdo central */
 .telas-brancas {
-    position: relative;
-    width: 1245px;
-    height: 777px;
-    margin: 63px 0 0 98px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
     background: url(../assets/images/c71ac48d-df93-4167-a200-66ec2c70a90f.png) no-repeat center;
     background-size: cover;
-    z-index: 1;
-    overflow: visible auto;
 }
 
-.flex-row {
-    position: relative;
-    width: 600px;
-    height: 69px;
-    margin: 96px 0 0 537px;
-    z-index: 13;
-}
-
+/* Logo e título */
 .logo-unifesspa-login {
-    position: absolute;
-    width: 69px;
-    height: 69px;
-    top: 0;
-    left: 531px;
+    width: 70px;
+    height: 70px;
     background: url(../assets/images/70672ce5848878a5f7f6c8586ae7e6be78a25b89.png) no-repeat center;
     background-size: cover;
-    border-radius: 34.5px;
-    margin: -10px 0 0 -20px;
-    z-index: 13;
+    border-radius: 50%;
+    margin-bottom: 20px;
 }
 
 .login-titulo {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    position: absolute;
-    height: 56px;
-    top: 13px;
-    left: 0;
+    font-size: 2.5rem;
     color: var(--dark-text);
-    font-family: 'Red Hat Mono', var(--default-font);
-    font-size: 53px;
-    font-weight: 400;
-    line-height: 56px;
-    letter-spacing: 4.03px;
-    z-index: 11;
+    margin-bottom: 10px;
 }
 
 .tituloTela-login {
-    display: block;
-    position: relative;
-    height: 61px;
-    margin: 35px 0 0 340px;
+    font-size: 1.5rem;
     color: var(--dark-text);
-    font-family: 'Red Hat Mono', var(--default-font);
-    font-size: 36px;
-    font-weight: 400;
-    line-height: 47.628px;
-    letter-spacing: 4.03px;
-    z-index: 12;
+    margin-bottom: 30px;
+    text-align: center;
 }
 
-/* Campo de Usuário */
-.usuario-LOGIN {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    width: 514px;
-    height: 60px;
-    margin: 40px 0 0 356px;
-    padding: 8px 0;
-    background: #ffffff;
-    border: 2px solid var(--border-color);
-    border-radius: 5px;
-    z-index: 15;
-}
-
-.bloco-usuario {
-    position: absolute;
-    width: 108px;
-    height: 24px;
-    top: 50%;
-    left: 10px;
-    transform: translateY(-50%);
-    color: var(--transparent-black);
-    font-family: 'Red Hat Mono', var(--default-font);
-    font-size: 20px;
-    line-height: 28px;
-    z-index: 16;
-}
-
-.user-input {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    padding: 18px 15px 18px 120px;
-    background: transparent;
-    border: none;
-    font-size: 18px;
-    z-index: 18;
-}
-
-.icone-pessoa {
-    position: absolute;
-    width: 45px;
-    height: 43px;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: url(assets/images/710d310b-1c18-46e2-a82e-40b6c8507712.png) no-repeat center;
-    background-size: cover;
-    z-index: 17;
-}
-
-/* Campo de Senha */
+/* Campos de entrada */
+.usuario-LOGIN,
 .senha-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 10px 0;
     position: relative;
-    width: 514px;
-    height: 60px;
-    margin: 30px 0 0 356px;
 }
 
+.bloco-usuario,
 .senha-login {
     position: absolute;
-    width: 85px;
-    height: 24px;
+    left: 15px;
     top: 50%;
-    left: 20px;
     transform: translateY(-50%);
     color: var(--transparent-black);
-    font-family: 'Red Hat Mono', var(--default-font);
-    font-size: 20px;
-    line-height: 28px;
-    z-index: 23;
+    font-size: 1rem;
     pointer-events: none;
 }
 
+.user-input,
 .senha-input-login {
-    position: absolute;
     width: 100%;
-    height: 100%;
-    padding: 18px 15px 18px 110px;
-    background: #ffffff;
+    padding: 15px 15px 15px 120px;
     border: 2px solid var(--border-color);
     border-radius: 5px;
-    font-size: 18px;
-    z-index: 22;
+    font-size: 1rem;
+    background: #ffffff;
 }
 
+.icone-pessoa,
 .olho {
     position: absolute;
-    width: 40px;
-    height: 30px;
     right: 15px;
     top: 50%;
     transform: translateY(-50%);
-    background: url(assets/images/20c3839a-d32d-400e-9cc7-a8ba019aa17b.png) no-repeat center;
+    width: 24px;
+    height: 24px;
     background-size: cover;
-    z-index: 24;
 }
 
 /* Botões */
-.botao-login-lab {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    width: 477px;
-    height: 55px;
-    margin: 40px 0 0 383px;
+.botao-login-lab,
+.botao-cadastro {
+    width: 100%;
+    max-width: 500px;
+    padding: 15px;
+    margin: 10px 0;
     background: var(--secondary-green);
+    border: none;
     border-radius: 6px;
-    z-index: 4;
-}
-
-.rectangle-3 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    width: 477px;
-    height: 55px;
-    margin: 24.01px 0 0 380px;
-    background: var(--secondary-green);
-    border-radius: 6px;
-    z-index: 7;
-}
-
-.entrar-login,
-.realizar-cadastro {
     color: var(--light-text);
-    font-family: 'Red Hat Mono', var(--default-font);
-    font-size: 18px;
-    line-height: 20px;
+    font-size: 1rem;
     text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s;
 }
 
+.botao-login-lab:hover,
+.botao-cadastro:hover {
+    background: var(--primary-green);
+}
+
+/* Imagem de fundo */
 .image-login {
-    position: absolute;
-    width: 1440px;
-    height: 1024px;
-    top: -1px;
-    left: -1px;
-    background: url(../assets/images/705a0b0a7d81bbd83f0eb96b5af38bf6f5511cff.png) no-repeat center;
-    background-size: cover;
+    display: none;
+    /* Removida, pois o fundo já está no .telas-brancas */
 }

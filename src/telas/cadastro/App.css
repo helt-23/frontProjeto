@@ -1,8 +1,5 @@
 :root {
-    --default-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu,
-        "Helvetica Neue", Helvetica, Arial, "PingFang SC",
-        "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
-        "Source Han Sans CN", sans-serif;
+    --default-font: 'Red Hat Mono', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, sans-serif;
     --primary-green: #0f6829;
     --secondary-green: #1e8e3e;
     --dark-text: #354446;
@@ -10,160 +7,150 @@
     --transparent-black: rgba(0, 0, 0, 0.44);
 }
 
-/* Estrutura Principal */
-.main-container {
-    width: 1440px;
-    height: 1024px;
-    margin: 0 auto;
-    overflow: hidden;
-    position: relative;
+/* Reset básico e configurações globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--default-font);
 }
 
+html,
+body,
+#root {
+    height: 100%;
+    width: 100%;
+}
+
+/* Container principal */
+.main-container-cadastro {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Barra superior */
 .barra-superior {
-    width: 1440px;
+    width: 100%;
     height: 50px;
     background: var(--primary-green);
-    border: 1px solid #000;
+    border-bottom: 1px solid #000;
     z-index: 1;
 }
 
-/* Container do Formulário */
+/* Container do formulário centralizado */
 .tela-branca {
-    width: 1156px;
-    height: 752px;
-    margin: 99px 0 0 142px;
-    background: #fff;
-    border: 2px solid #000;
-    border-radius: 10px;
-    box-shadow: 0 4px 4px 0 rgba(12, 12, 13, 0.05);
-    position: relative;
-    z-index: 2;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
 }
 
-/* Cabeçalho */
-.flex-row-f {
-    position: relative;
-    width: 1054px;
-    height: 69px;
-    margin: 42px 0 0 48px;
+/* Cabeçalho do formulário */
+.form-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
 }
 
 .botao-voltar {
-    position: absolute;
     width: 60px;
     height: 58px;
-    top: 0;
-    left: 0;
-    z-index: 29;
-}
-
-.botao-voltar-cadastro {
-    width: 100%;
-    height: 100%;
     background: url(assets/images/09d587e5-4a53-4776-b388-84715529366c.png) no-repeat center;
-    background-size: 100% 100%;
+    background-size: contain;
+    cursor: pointer;
+    border: none;
 }
 
 .logo-unifesspa-cadastro {
-    position: absolute;
     width: 69px;
     height: 69px;
-    top: 0;
-    left: 985px;
     background: url(../assets/images/70672ce5848878a5f7f6c8586ae7e6be78a25b89.png) no-repeat center;
     background-size: cover;
-    border-radius: 34.5px;
-    z-index: 7;
+    border-radius: 50%;
 }
 
+/* Título */
 .cadastro {
-    display: block;
-    height: 61px;
-    margin: 0 0 0 490px;
+    font-size: 2.5rem;
     color: var(--dark-text);
-    font-family: 'Red Hat Mono', var(--default-font);
-    font-size: 36px;
-    line-height: 47.628px;
-    letter-spacing: 4.03px;
+    text-align: center;
+    margin: 1rem 0;
 }
 
-/* Campos do Formulário Ajustados */
+/* Formulário */
+.form-container {
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Campos do formulário */
 .form-field-container {
     display: flex;
-    align-items: center;
-    margin-bottom: 20px;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+    width: 100%;
 }
 
 .form-label {
     color: var(--transparent-black);
-    font-family: 'Red Hat Mono', var(--default-font);
-    font-size: 18px;
-    width: 150px;
-    text-align: right;
-    padding-right: 10px;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
 }
 
 .form-input {
+    width: 100%;
+    height: 45px;
     background: var(--input-bg);
     border: 2px solid #000;
     border-radius: 5px;
-    height: 35px;
-    font-size: 16px;
-    padding: 8px 12px;
-    flex-grow: 1;
+    padding: 0 1rem;
+    font-size: 1rem;
 }
 
-
-/* Ajustes Específicos de Posicionamento */
-.bloco-nome,
-.bloco-sobrenome,
-.bloco-matricula,
-.bloco-curso,
-.bloco-senha {
-    width: 700px;
-    margin-left: 250px !important;
-}
-
-.bloco-confirmacao {
-    width: 750px;
-    margin-left: 200px !important;
-}
-
-.bloco-data {
-    width: 750px;
-    margin-left: 180px !important;
-}
-
-/* Botão de Cadastro Ajustado */
+/* Botão de cadastro */
 .botao-cadastrar {
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     height: 45px;
-    /* Altura ajustada */
     background: var(--secondary-green);
     border-radius: 6px;
-    margin: 40px 0 0 420px;
+    margin: 2rem auto 0;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.botao-cadastrar:hover {
+    transform: scale(1.02);
 }
 
 .cadastrar {
     color: #fff;
-    font-family: 'Red Hat Mono', var(--default-font);
-    font-size: 18px;
-    /* Fonte ajustada */
+    font-size: 1.1rem;
     text-transform: uppercase;
 }
 
 /* Background */
 .back-ground {
-    position: absolute;
-    width: 1440px;
-    height: 1024px;
-    top: 50%;
-    left: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: url(../assets/images/705a0b0a7d81bbd83f0eb96b5af38bf6f5511cff.png) no-repeat center;
     background-size: cover;
-    transform: translate(-50%, -50%);
+    z-index: -1;
 }

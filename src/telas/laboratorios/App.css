@@ -1,213 +1,139 @@
 :root {
-    --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei", "Source Han Sans CN", sans-serif;
+    --default-font: 'Red Hat Mono', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, sans-serif;
+    --primary-green: #0f6829;
+    --secondary-green: #4ea151;
+    --dark-color: #000000;
+    --gray-bg: #797979;
+    --card-bg: #b7b1b1;
 }
 
-.main-container {
-    position: relative;
-    width: 1440px;
-    height: 1024px;
-    margin: 0 auto;
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--default-font);
+}
+
+html,
+body,
+#root {
+    height: 100%;
+    width: 100%;
+}
+
+/* Layout principal */
+.main-container-lab {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     background: #ffffff;
-    border: 2px solid #000000;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-    overflow: visible;
+    border: 2px solid var(--dark-color);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-/* CABEÇALHO */
-.barra-superior {
-    position: relative;
+/* Cabeçalho */
+.header {
     width: 100%;
     height: 50px;
-    background: #0f6829;
-    border-bottom: 2px solid #000000;
-    z-index: 101;
-    overflow: visible;
+    background: var(--primary-green);
+    border-bottom: 2px solid var(--dark-color);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 20px;
+    position: relative;
 }
 
-.botao-usuario {
-    position: absolute;
-    right: 20px;
-    top: 6px;
+.user-button {
     width: 40px;
     height: 39px;
     background: url(assets/images/a6aeff2f-505c-4ced-a9fc-2902a64b4bd6.png) no-repeat center;
     background-size: cover;
-    z-index: 102;
     cursor: pointer;
+    border: none;
 }
 
-/* ÁREA PRINCIPAL */
-.tabela {
-    position: relative;
-    width: 1245px;
-    height: 777px;
-    margin: 75px 0 0 99px;
-    background-size: cover;
-    z-index: 1;
+/* Conteúdo principal */
+.main-content {
+    flex: 1;
+    padding: 2rem;
+    background: var(--gray-bg);
+    border: 5px solid var(--dark-color);
+    margin: 20px;
 }
 
-/* TÍTULO */
-.flex-row-ed {
-    position: relative;
-    width: 774px;
-    height: 82px;
-    margin: 0 0 0 408px;
-    z-index: 100;
+.title-container {
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
-.laboratorios {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    position: absolute;
-    height: 70px;
-    top: 12px;
-    left: 0;
-    color: #000000;
-    font-family: Red Hat Mono, var(--default-font-family);
-    font-size: 53px;
-    font-weight: 400;
-    line-height: 70px;
-    text-align: left;
-    white-space: nowrap;
-    letter-spacing: 4.03px;
-    z-index: 100;
+.page-title {
+    font-size: 3rem;
+    letter-spacing: 4px;
+    color: var(--dark-color);
 }
 
-/* GRADE DE LABORATÓRIOS */
-.tabela-de-labs {
-    position: relative;
-    width: 1046px;
-    height: 592px;
-    margin: 11px 0 0 102px;
-    background: #797979;
-    border: 5px solid #000000;
-    z-index: 3;
-    overflow: hidden;
+/* Grade de laboratórios */
+.labs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.flex-row-e {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    width: 994px;
-    margin: 15px 0 0 24px;
-    z-index: 28;
-    height: auto;
-}
-
-/* CARD DO LABORATÓRIO */
-.pasta-labs {
-    width: calc(25% - 20px);
-    /* Mantém 4 colunas */
-    margin-bottom: 20px;
-}
-
-.botao-lab {
-    width: 100%;
-    height: 146px;
+/* Card de laboratório */
+.lab-card {
     background: url(assets/images/b642ef98834e3fe50fc39200de27aa16b78b8b7f.png) no-repeat center;
     background-size: cover;
-    border-radius: 20px 0 20px 0;
-    padding: 10px;
+    border: 2px solid var(--dark-color);
+    border-radius: 20px 0;
+    padding: 1rem;
+    min-height: 180px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    box-shadow: 0 0 0 2px #000000;
-    /* Borda escura de 2px */
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
 }
 
-.id-sala {
-    background: #b7b1b1;
-    border: 1px solid #000000;
+.lab-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.lab-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lab-number {
+    background: var(--card-bg);
+    padding: 0.5rem 1rem;
     border-radius: 20px 0;
-    padding: 5px 10px;
-    width: max-content;
+    border: 1px solid var(--dark-color);
+    font-size: 1.2rem;
 }
 
-.sala-24 {
-    font-family: Yantramanav, var(--default-font-family);
-    font-size: 20px;
-    letter-spacing: 1.5px;
-    white-space: nowrap;
-}
-
-.num-de-lugares {
-    background: #4ea151;
-    border: 1px solid #000000;
+.lab-capacity {
+    background: var(--secondary-green);
+    padding: 0.3rem 0.8rem;
     border-radius: 10px 0 0 0;
-    padding: 2px 5px;
-    width: 100px;
-    margin-left: auto;
+    border: 1px solid var(--dark-color);
+    font-size: 0.9rem;
 }
 
-.lugares {
-    font-family: Red Hat Display, var(--default-font-family);
-    font-size: 13px;
-    display: block;
-    width: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    /* Truncamento do texto */
-}
-
-.descricao {
+.lab-description {
     background: #ffffff;
-    border: 1px solid #000000;
-    padding: 5px;
-    width: 100%;
-    min-height: 50px;
+    padding: 1rem;
+    border: 1px solid var(--dark-color);
+    text-align: center;
+    min-height: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.laboratorio-computacao {
-    font-family: Yantramanav, var(--default-font-family);
-    font-size: 16px;
-    text-align: center;
-    line-height: 1.2;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    line-clamp: 2;
-    /* Limita a 2 linhas */
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    /* Truncamento do texto */
-}
-
-/* ELEMENTOS DE FUNDO */
-.image {
-    position: absolute;
-    width: 1440px;
-    height: 1024px;
-    top: -2px;
-    left: -2px;
-    background-size: cover;
-    z-index: -1;
-}
-
-/* Parte do botao clicável */
-/* Estilização do link */
-.botao-lab-link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    height: 100%;
-}
-
-/* Mantenha os efeitos hover originais do botão */
-.botao-lab-link:hover .botao-lab {
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-}
-
-/* Mantenha o estilo original do botão-lab */
-.botao-lab {
-    /* Seus estilos existentes */
-    transition: all 0.3s ease;
-    /* Adicione transição se não tiver */
+    line-height: 1.4;
 }
