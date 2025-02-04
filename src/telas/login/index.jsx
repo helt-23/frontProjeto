@@ -25,10 +25,6 @@ export default function Main() {
                     <input type="password" className="senha-input-login" />
                     <div className="olho"></div>
                 </div>
-                <div className="caixa-lembrar-senha">
-                    <div className="rectangle" />
-                    <span className="lembrar-dos-meus-dados">Lembrar dos meus dados</span>
-                </div>
                 <Link to="/laboratorios" className="botao-login-lab">
                     <span className="entrar-login">entrar</span>
                 </Link>

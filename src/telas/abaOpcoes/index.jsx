@@ -12,7 +12,7 @@ export default function AbaOpcoes() {
         },
         {
             texto: "VER RESERVAS",
-            caminho: "/reservas",
+            caminho: "/minhasReservas",
             className: "ver-reservas"
         },
         {

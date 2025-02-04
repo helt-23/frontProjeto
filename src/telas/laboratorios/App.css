@@ -188,3 +188,26 @@
     background-size: cover;
     z-index: -1;
 }
+
+/* Parte do botao clicável */
+/* Estilização do link */
+.botao-lab-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+}
+
+/* Mantenha os efeitos hover originais do botão */
+.botao-lab-link:hover .botao-lab {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+/* Mantenha o estilo original do botão-lab */
+.botao-lab {
+    /* Seus estilos existentes */
+    transition: all 0.3s ease;
+    /* Adicione transição se não tiver */
+}

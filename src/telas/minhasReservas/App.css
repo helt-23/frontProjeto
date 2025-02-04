@@ -1,0 +1,144 @@
+/***** Estilos Globais *****/
+:root {
+    --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu,
+        "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+        "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
+        "Source Han Sans CN", sans-serif;
+}
+
+/***** ReservationsPage *****/
+.reservations-page {
+    width: 1000px;
+    height: 700px;
+    margin: 0 auto;
+    background: linear-gradient(180deg, #203e2a, #54a470);
+    overflow: hidden;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.reservations-container {
+    width: 920px;
+    height: 620px;
+    margin: 47px 0 0 52px;
+    background: #ffffff;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+/***** Header *****/
+.reservations-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 861px;
+    height: 79px;
+    margin: 16px 0 0 20px;
+}
+
+.reservations-title {
+    font-family: 'Red Hat Mono', var(--default-font-family);
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 42px;
+    color: #000000;
+    padding: 12px 16px;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    border-radius: 6px;
+}
+
+.user-avatar {
+    width: 69px;
+    height: 69px;
+    background: url(assets/images/63119c28-b6e3-40fa-9d41-f19c0deccb6b.png) no-repeat center;
+    background-size: cover;
+    border-radius: 34.5px;
+}
+
+/***** ReservationList *****/
+.reservation-list {
+    width: 776px;
+    height: 484px;
+    margin: 0 0 0 36px;
+    overflow-y: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
+}
+
+/***** ReservationCard *****/
+.reservation-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 27px;
+    width: 224px;
+    padding: 6px 16px;
+    background: linear-gradient(180deg, #ffffff, #999999);
+    border-radius: 5px;
+    font-family: 'Red Hat Mono', var(--default-font-family);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21px;
+    color: #000000;
+}
+
+.room-number {
+    width: 91px;
+    height: 30px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.reservation-code,
+.reservation-time {
+    margin: 0;
+}
+
+/***** Estilos Responsivos *****/
+@media (max-width: 1024px) {
+    .reservations-page {
+        width: 95%;
+        height: auto;
+        padding: 20px 0;
+    }
+
+    .reservations-container {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    .reservation-list {
+        justify-content: center;
+    }
+}
+
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* Ajuste para os cards clicáveis */
+.reservation-card {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.reservation-card:hover {
+    transform: scale(1.02);
+}
