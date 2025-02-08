@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const BotaoLab = ({ sala, lugares, descricao }) => (
+const BotaoLab = ({ sala, lugares, descricao, detalhe, idLab }) => (
     <Link
         to="/horarios"
-        state={{ sala, lugares, descricao }}
+        state={{ sala, lugares, descricao, detalhe, idLab }}
         className="lab-card"
     >
         <div className="lab-header">

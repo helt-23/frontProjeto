@@ -115,7 +115,7 @@ body {
 
 /* Células disponíveis sem padding, para que o link ocupe todo o espaço */
 .available-cell {
-    padding: 0;
+    padding: 0px;
     transition: background 0.3s ease;
 }
 
@@ -131,6 +131,16 @@ body {
     transition: background 0.3s, color 0.3s;
 }
 
+.reserved{
+    background-color: #f8d7da; /* Vermelho claro */
+    color: #721c24;
+}
+
+.reserved .slot-link{
+    background-color: #f8d7da; /* Vermelho claro */
+    color: #721c24;
+}
+
 /* Efeito de hover aplicado à célula inteira */
 .available-cell:hover .slot-link {
     background: #0f6829;
@@ -138,6 +148,16 @@ body {
     cursor: pointer;
 }
 
+.reserved:hover{
+    cursor: pointer;
+    background-color: #721c24; /* Vermelho claro */
+    color: #fff;;
+}
+
+.reserved:hover .slot-link{
+    background-color: #f8d7da; /* Vermelho claro */
+    color: #721c24;
+}
 /* Responsividade para telas menores */
 @media screen and (max-width: 768px) {
     .schedule-header h1 {

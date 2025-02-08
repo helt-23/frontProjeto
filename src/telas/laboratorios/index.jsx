@@ -3,14 +3,14 @@ import BotaoLab from "./BotaoLab";
 import AbaOpcoes from "../abaOpcoes";
 import "./App.css";
 
-const labsData = Array(12).fill({
-    sala: "Sala 24",
-    lugares: "30 lugares",
-    descricao: "LABORATÓRIO DE COMPUTAÇÃO"
-});
+//Importação da configuração da API
+import axios from "axios";
+import {url, port} from '../../../configApi.json'
 
 export default function Laboratorios() {
+    const [labs, setLabs] = useState([]);
     const [mostrarAba, setMostrarAba] = useState(false);
+    
     const abaRef = useRef(null);
 
     const toggleAba = () => setMostrarAba(!mostrarAba);
@@ -21,6 +21,20 @@ export default function Laboratorios() {
                 setMostrarAba(false);
             }
         };
+
+        const buscarLaboratorios = async () =>{
+            try {
+                const response = await axios.get(`${url}:${port}/laboratorio/`)
+                setLabs(response.data)
+
+            } catch (error) {
+                console.log("Erro", error)
+            }
+            
+            
+        }
+
+        buscarLaboratorios()
 
         document.addEventListener("mousedown", handleClickOutside);
         return () => document.removeEventListener("mousedown", handleClickOutside);
@@ -47,12 +61,14 @@ export default function Laboratorios() {
                 </div>
 
                 <div className="labs-grid">
-                    {labsData.map((lab, index) => (
+                    {labs.map((lab, index) => (
                         <BotaoLab
                             key={index}
-                            sala={lab.sala}
-                            lugares={lab.lugares}
+                            idLab={lab.id}
+                            sala={lab.localizacaoLab}
+                            lugares={lab.capacidade}
                             descricao={lab.descricao}
+                            detalhe={lab.detalhamentoLab}
                         />
                     ))}
                 </div>
