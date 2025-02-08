@@ -6,6 +6,7 @@ import Laboratorio from './telas/laboratorios';
 import Horarios from './telas/horarios';
 import Reservas from './telas/minhasReservas';
 import Reservar from './telas/realizarReservas';
+import EditarInfo from './telas/telaEditar/Editar';
 
 function App() {
     return (
@@ -17,6 +18,7 @@ function App() {
                 <Route path="/cadastro" element={<Cadastro />} />
                 <Route path="/horarios" element={<Horarios />} />
                 <Route path="/minhasReservas" element={<Reservas />} />
+                <Route path="/Editar" element={<EditarInfo />} />
                 <Route path="/realizarReservas" element={<Reservar />} />
             </Routes>
         </Router>

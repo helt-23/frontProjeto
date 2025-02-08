@@ -90,7 +90,7 @@ body,
     left: 15px;
     top: 50%;
     transform: translateY(-50%);
-    color: var(--transparent-black);
+    color: black;
     font-size: 1rem;
     pointer-events: none;
 }
@@ -98,7 +98,7 @@ body,
 .user-input,
 .senha-input-login {
     width: 100%;
-    padding: 15px 15px 15px 120px;
+    padding: 15px 15px 15px 80px;
     border: 2px solid var(--border-color);
     border-radius: 5px;
     font-size: 1rem;

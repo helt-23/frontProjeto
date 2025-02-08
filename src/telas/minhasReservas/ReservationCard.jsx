@@ -1,11 +1,26 @@
 import React from 'react';
 
-export default function ReservationCard({ room, code, time, onClick }) {
+export default function ReservationCard({ room, code, time, onCancel }) {
     return (
-        <article className="reservation-card" onClick={onClick}>
-            <h2 className="room-number">{room}</h2>
-            <p className="reservation-code">Código: {code}</p>
-            <p className="reservation-time">Horário: {time}</p>
-        </article>
+        <div className="reservation-card">
+            <div className="card-header">
+                <h3 className="room-number">{room}</h3>
+            </div>
+            <div className="reservation-details">
+                <p className="reservation-detail">
+                    <strong>Código:</strong> {code}
+                </p>
+                <p className="reservation-detail">
+                    <strong>Horário:</strong> {time}
+                </p>
+            </div>
+            <button
+                className="cancel-button"
+                onClick={onCancel}
+                aria-label="Cancelar reserva"
+            >
+                Cancelar Reserva
+            </button>
+        </div>
     );
 }

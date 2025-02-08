@@ -10,36 +10,30 @@ export default function MinhasReservas() {
     const navigate = useNavigate();
 
     const reservationsData = [
-        { id: 1, room: "sala 24", code: "01", time: "13h-13:50" },
-        { id: 2, room: "sala 24", code: "01", time: "13h-13:50" },
-        { id: 3, room: "sala 24", code: "01", time: "13h-13:50" },
-        { id: 4, room: "sala 24", code: "01", time: "13h-13:50" },
+        { id: 1, room: "Sala de Reuniões 24", code: "RSV-001", time: "13:00 - 13:50" },
+        { id: 2, room: "Auditório Principal", code: "RSV-002", time: "14:00 - 15:30" },
+        { id: 3, room: "Laboratório 5", code: "RSV-003", time: "16:00 - 17:00" },
+        { id: 4, room: "Sala de Treinamento", code: "RSV-004", time: "09:00 - 10:30" },
+        { id: 4, room: "Sala de Treinamento", code: "RSV-004", time: "09:00 - 10:30" },
+        { id: 4, room: "Sala de Treinamento", code: "RSV-004", time: "09:00 - 10:30" },
     ];
 
-    const handleCardClick = (reservationId) => {
+    const handleCancelClick = (reservationId) => {
         setSelectedReservation(reservationId);
         setShowModal(true);
     };
 
     const handleConfirmCancel = () => {
-        // Lógica para cancelar a reserva
-        console.log("Cancelar reserva:", selectedReservation);
-        setShowModal(false);
-    };
-
-    const handleCancel = () => {
+        console.log("Reserva cancelada:", selectedReservation);
         setShowModal(false);
     };
 
     return (
-        // Overlay que cobre a tela inteira com o fundo borrado
         <div className="modal-overlay" onClick={() => navigate('/laboratorios')}>
-            {/* Conteúdo principal do modal; o clique aqui não fecha o overlay */}
             <main className="reservations-page" onClick={(e) => e.stopPropagation()}>
                 <div className="reservations-container">
                     <header className="reservations-header">
                         <h1 className="reservations-title">Minhas Reservas</h1>
-                        <div className="user-avatar" aria-label="User avatar" role="img" />
                     </header>
 
                     <section className="reservation-list">
@@ -49,17 +43,16 @@ export default function MinhasReservas() {
                                 room={reservation.room}
                                 code={reservation.code}
                                 time={reservation.time}
-                                onClick={() => handleCardClick(reservation.id)}
+                                onCancel={() => handleCancelClick(reservation.id)}
                             />
                         ))}
                     </section>
 
                     {showModal && (
-                        // Overlay para o CancelModal, também interrompe a propagação para não fechar o modal de reservas
                         <div className="modal-overlay" onClick={(e) => e.stopPropagation()}>
                             <CancelModal
                                 onConfirm={handleConfirmCancel}
-                                onCancel={handleCancel}
+                                onCancel={() => setShowModal(false)}
                             />
                         </div>
                     )}

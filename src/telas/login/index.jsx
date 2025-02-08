@@ -34,7 +34,7 @@ export default function Main() {
                     Entrar
                 </Link>
                 <Link to="/cadastro" className="botao-cadastro">
-                    Realizar Cadastro
+                    auto cadastro
                 </Link>
             </div>
         </div>

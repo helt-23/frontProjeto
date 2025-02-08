@@ -58,8 +58,8 @@ body,
 .main-content {
     flex: 1;
     padding: 2rem;
-    background: var(--gray-bg);
-    border: 5px solid var(--dark-color);
+    background: white;
+    border: none;
     margin: 20px;
 }
 
@@ -97,6 +97,7 @@ body,
     transition: all 0.3s ease;
     text-decoration: none;
     color: inherit;
+    box-shadow: 0 7px 7px rgba(0, 0, 0, 0.5);
 }
 
 .lab-card:hover {
@@ -111,7 +112,7 @@ body,
 }
 
 .lab-number {
-    background: var(--card-bg);
+    background: #ffffff;
     padding: 0.5rem 1rem;
     border-radius: 20px 0;
     border: 1px solid var(--dark-color);

@@ -24,7 +24,9 @@ body {
 .botao-voltar {
     position: absolute;
     bottom: 700px;
+    top: 50px;
     left: 50px;
+    /* Alterado de right para left */
     width: 60px;
     height: 58px;
     background: url(../assets/images/09d587e5-4a53-4776-b388-84715529366c.png) no-repeat center;

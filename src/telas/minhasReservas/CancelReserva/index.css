@@ -43,6 +43,6 @@
 }
 
 .cancel-btn {
-    background: var(--secondary-color);
+    background: #666;
     color: white;
 }

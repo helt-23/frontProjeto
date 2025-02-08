@@ -64,6 +64,7 @@ body,
 }
 
 .botao-voltar {
+    top: 100px;
     width: 60px;
     height: 58px;
     background: url(assets/images/09d587e5-4a53-4776-b388-84715529366c.png) no-repeat center;
@@ -78,6 +79,8 @@ body,
     background: url(../assets/images/70672ce5848878a5f7f6c8586ae7e6be78a25b89.png) no-repeat center;
     background-size: cover;
     border-radius: 50%;
+    margin: 0 auto 1rem;
+    /* Centraliza horizontalmente e adiciona espaço abaixo */
 }
 
 /* Título */

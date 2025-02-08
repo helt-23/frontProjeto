@@ -4,6 +4,9 @@
         "Helvetica Neue", Helvetica, Arial, "PingFang SC",
         "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
         "Source Han Sans CN", sans-serif;
+    --primary-color: #2c3e50;
+    --cancel-color: #e74c3c;
+    --cancel-hover: #c0392b;
 }
 
 /***** ReservationsPage *****/
@@ -14,112 +17,114 @@
     background: linear-gradient(180deg, #203e2a, #54a470);
     overflow: hidden;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
 }
 
 .reservations-container {
     width: 920px;
     height: 620px;
-    margin: 47px 0 0 52px;
+    margin: 40px auto;
     background: #ffffff;
     overflow: hidden;
     border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 /***** Header *****/
 .reservations-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 861px;
-    height: 79px;
-    margin: 16px 0 0 20px;
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 .reservations-title {
     font-family: 'Red Hat Mono', var(--default-font-family);
-    font-size: 32px;
-    font-weight: 400;
-    line-height: 42px;
-    color: #000000;
-    padding: 12px 16px;
-    background: #ffffff;
-    border: 1px solid rgba(0, 0, 0, 0.8);
-    border-radius: 6px;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
 }
 
-.user-avatar {
-    width: 69px;
-    height: 69px;
-    background: url(assets/images/63119c28-b6e3-40fa-9d41-f19c0deccb6b.png) no-repeat center;
-    background-size: cover;
-    border-radius: 34.5px;
+.reservations-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-color);
 }
 
 /***** ReservationList *****/
 .reservation-list {
-    width: 776px;
-    height: 484px;
-    margin: 0 0 0 36px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 20px;
+    max-height: 500px;
     overflow-y: auto;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 35px;
 }
 
 /***** ReservationCard *****/
 .reservation-card {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 27px;
-    width: 224px;
-    padding: 6px 16px;
-    background: linear-gradient(180deg, #ffffff, #999999);
-    border-radius: 5px;
-    font-family: 'Red Hat Mono', var(--default-font-family);
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 21px;
-    color: #000000;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-left: 5px solid #54a470;
+    position: relative;
+}
+
+.reservation-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
 }
 
 .room-number {
-    width: 91px;
-    height: 30px;
-    border: 1px solid #000000;
-    border-radius: 5px;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-    font-weight: 400;
-}
-
-.reservation-code,
-.reservation-time {
+    font-size: 1.4rem;
+    color: var(--primary-color);
     margin: 0;
+    font-weight: 600;
 }
 
-/***** Estilos Responsivos *****/
-@media (max-width: 1024px) {
-    .reservations-page {
-        width: 95%;
-        height: auto;
-        padding: 20px 0;
-    }
-
-    .reservations-container {
-        width: 90%;
-        margin: 20px auto;
-    }
-
-    .reservation-list {
-        justify-content: center;
-    }
+.reservation-detail {
+    margin: 10px 0;
+    font-size: 0.95rem;
+    color: #555;
 }
 
-/* Modal Overlay */
+.reservation-detail strong {
+    color: var(--primary-color);
+    margin-right: 8px;
+}
+
+.cancel-button {
+    background-color: var(--cancel-color);
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.cancel-button:hover {
+    background-color: var(--cancel-hover);
+}
+
+/***** Modal Overlay *****/
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -127,23 +132,10 @@
     right: 0;
     bottom: 0;
     background: rgba(0, 0, 0, 0.2);
-    /* Fundo semi-transparente */
     backdrop-filter: blur(8px);
-    /* Aplica o desfoque */
     -webkit-backdrop-filter: blur(8px);
-    /* Compatibilidade com Safari */
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 1000;
-}
-
-/* Ajuste para os cards clicáveis */
-.reservation-card {
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.reservation-card:hover {
-    transform: scale(1.02);
 }

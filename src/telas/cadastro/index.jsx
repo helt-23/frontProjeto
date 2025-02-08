@@ -16,7 +16,7 @@ export default function Main() {
                     <div className="logo-unifesspa-cadastro" />
                 </div>
 
-                <h1 className="cadastro">Cadastro</h1>
+                <h1 className="cadastro">Auto Cadastro</h1>
 
                 <div className="form-container"> {/*CAMPOS DO FORUMLÁRIO A BAIXO*/}
                     <div className="form-field-container">
