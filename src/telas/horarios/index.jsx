@@ -53,7 +53,6 @@ export default function LabScheduleComponent() {
         //Para conseguir rodar os horários dinamicamente, eu recebo uma informação do hoário nessa função e listo e busco esse dado na função
         //O filter retorna um horário que retorna um array. Esse array constitui a linha da tabel
         const horariosDoDia = horarios.filter(h => `${h.horaInicio} - ${h.horaFim}` === horario)
-        console.log(horariosDoDia)
         return horariosDoDia
     }
 

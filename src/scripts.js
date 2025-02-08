@@ -6,3 +6,9 @@ export function formatarData(timestamp) {
 
     return `${dia}/${mes}/${ano}`;
 }
+
+export function validarLogin(estado){
+    if (!estado) {
+        window.location.href="/"
+    }
+}

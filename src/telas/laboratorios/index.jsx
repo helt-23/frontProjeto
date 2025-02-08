@@ -1,7 +1,9 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useContext } from "react";
 import BotaoLab from "./BotaoLab";
 import AbaOpcoes from "../abaOpcoes";
 import "./App.css";
+import { LoginContext } from "../../context/LoginContext";
+import { validarLogin } from "../../scripts";
 
 //Importação da configuração da API
 import axios from "axios";
@@ -11,6 +13,7 @@ export default function Laboratorios() {
     const [labs, setLabs] = useState([]);
     const [mostrarAba, setMostrarAba] = useState(false);
     
+    const {logado, usuarioLogado} = useContext(LoginContext)
     const abaRef = useRef(null);
 
     const toggleAba = () => setMostrarAba(!mostrarAba);
@@ -31,9 +34,8 @@ export default function Laboratorios() {
                 console.log("Erro", error)
             }
             
-            
         }
-
+        validarLogin(logado)
         buscarLaboratorios()
 
         document.addEventListener("mousedown", handleClickOutside);

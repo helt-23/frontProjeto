@@ -132,7 +132,7 @@ export default function Main() {
                     </div>
 
                     <div className="botao-cadastrar"
-                    onClick={cadastrarUsuario}
+                        onClick={cadastrarUsuario}
                     >
                         <span className="cadastrar">Cadastrar</span>
                     </div>

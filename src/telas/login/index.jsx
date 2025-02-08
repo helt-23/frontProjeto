@@ -1,8 +1,54 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, {useContext, useState} from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "./App.css";
 
+import axios from "axios";
+import {url, port} from '../../../configApi.json'
+import { LoginContext } from "../../context/LoginContext";
+
 export default function Main() {
+    const {setUsuarioLogado, usuarioLogado, setLogado, logado} = useContext(LoginContext)
+    const navigate = useNavigate()
+
+    const [login, setLogin] = useState({
+        matricula: "",
+        senha: ""
+    })
+
+    const handleChange = (e) => {
+        setLogin({
+            ...login,
+            [e.target.name]: e.target.value
+        })
+    }
+
+    const fazerLogin = async() => {
+        if(login.matricula == "" || login.senha == ""){
+            alert("Preencha os campos corretamente!")
+            return
+        }
+        try {
+            const resposta = await axios.get(`${url}:${port}/usuario/loginUsuario`, {
+                params: {
+                    matricula: login.matricula,
+                    senha: login.senha
+                }
+            })
+
+            console.log(resposta)
+            if(resposta.request.status == 200){
+                setLogado(true)
+                setUsuarioLogado(resposta.data)
+                navigate("/laboratorios")
+            }
+
+            //console.log(resposta)
+        } catch (error) {
+            const erro = error.response.data
+            alert(erro.message)
+        }
+    }
+
     return (
         <div className="main-container-login">
             {/* Barra superior */}
@@ -18,21 +64,33 @@ export default function Main() {
                 {/* Campo de usuário */}
                 <div className="usuario-LOGIN">
                     <span className="bloco-usuario">Usuário:</span>
-                    <input type="text" className="user-input" />
+                    <input 
+                        type="text" 
+                        className="user-input"
+                        name="matricula"
+                        onChange={(e) => handleChange(e)}
+
+                    />
                     <div className="icone-pessoa"></div>
                 </div>
 
                 {/* Campo de senha */}
                 <div className="senha-container">
                     <span className="senha-login">Senha:</span>
-                    <input type="password" className="senha-input-login" />
+                    <input 
+                        type="password" 
+                        className="senha-input-login"
+                        name="senha"
+                        onChange={(e) => handleChange(e)}
+                    
+                    />
                     <div className="olho"></div>
                 </div>
 
                 {/* Botões */}
-                <Link to="/laboratorios" className="botao-login-lab">
+                <div className="botao-login-lab" onClick={fazerLogin}>
                     Entrar
-                </Link>
+                </div>
                 <Link to="/cadastro" className="botao-cadastro">
                     auto cadastro
                 </Link>
