@@ -1,50 +1,23 @@
 // Editar.jsx
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./App.css";
 
 const Editar = () => {
     const navigate = useNavigate();
-    const [formData, setFormData] = useState({
-        nome: "",
-        matricula: "",
-        curso: "",
-        senhaNova: "",
-        senhaConfirmada: ""
-    });
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        if (formData.senhaNova === formData.senhaConfirmada) {
-            alert("Dados enviados com sucesso!");
-        } else {
-            alert("As senhas não coincidem!");
-        }
-    };
-
-    const handleChange = (e) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value
-        });
-    };
 
     return (
         <main className="main-container">
             <div className="header-bar" />
 
-            <form className="form-container" onSubmit={handleSubmit}>
-                {/* Logo centralizado */}
+            <form className="form-container">
                 <div className="logo-unifesspa"></div>
-                {/* Título centralizado */}
                 <h2 className="edit-title">Editar Informações</h2>
                 <div className="form-group">
                     <label>Nome:</label>
                     <input
                         type="text"
                         name="nome"
-                        value={formData.nome}
-                        onChange={handleChange}
                     />
                 </div>
 
@@ -53,8 +26,6 @@ const Editar = () => {
                     <input
                         type="text"
                         name="matricula"
-                        value={formData.matricula}
-                        onChange={handleChange}
                     />
                 </div>
 
@@ -63,8 +34,6 @@ const Editar = () => {
                     <input
                         type="text"
                         name="curso"
-                        value={formData.curso}
-                        onChange={handleChange}
                     />
                 </div>
 
@@ -75,8 +44,6 @@ const Editar = () => {
                     <input
                         type="password"
                         name="senhaNova"
-                        value={formData.senhaNova}
-                        onChange={handleChange}
                     />
                 </div>
 
@@ -85,8 +52,6 @@ const Editar = () => {
                     <input
                         type="password"
                         name="senhaConfirmada"
-                        value={formData.senhaConfirmada}
-                        onChange={handleChange}
                     />
                 </div>
 
