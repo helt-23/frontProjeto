@@ -76,43 +76,6 @@ body {
     font-size: 1.2em;
 }
 
-/* Seção da tabela com overflow para telas menores */
-.table-section {
-    width: 100%;
-    max-width: 1200px;
-    margin: 40px auto;
-    overflow-x: auto;
-}
-
-/* Estilo da tabela */
-.schedule-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: #fff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Alteração da borda para um tom um pouco mais escuro */
-.schedule-table th,
-.schedule-table td {
-    padding: 15px;
-    border: 1px solid #bbb;
-    text-align: center;
-    min-width: 100px;
-}
-
-.schedule-table th {
-    background: #0f6829;
-    color: #fff;
-    font-weight: 600;
-}
-
-/* Célula de horário com fundo diferenciado */
-.time-cell {
-    background: #f8f8f8;
-    font-weight: 600;
-}
-
 /* Células disponíveis sem padding, para que o link ocupe todo o espaço */
 .available-cell {
     padding: 0px;

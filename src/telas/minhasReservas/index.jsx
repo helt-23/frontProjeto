@@ -1,30 +1,82 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ReservationCard from './ReservationCard';
 import CancelModal from './CancelReserva/CancelModal';
 import './App.css';
+import axios from 'axios';
+import {url, port} from '../../../configApi.json'
+import { LoginContext } from '../../context/LoginContext';
+import { validarLogin } from '../../scripts';
 
 export default function MinhasReservas() {
-    const [selectedReservation, setSelectedReservation] = useState(null);
+    const {usuarioLogado, logado} = useContext(LoginContext)
+
+    const [reservas, setReservas] = useState([]);
+    const [reservaSelecionada, setReservaSelecionada] = useState(null)
     const [showModal, setShowModal] = useState(false);
     const navigate = useNavigate();
 
-    const reservationsData = [
-        { id: 1, room: "Sala de Reuniões 24", code: "RSV-001", time: "13:00 - 13:50" },
-        { id: 2, room: "Auditório Principal", code: "RSV-002", time: "14:00 - 15:30" },
-        { id: 3, room: "Laboratório 5", code: "RSV-003", time: "16:00 - 17:00" },
-        { id: 4, room: "Sala de Treinamento", code: "RSV-004", time: "09:00 - 10:30" },
-        { id: 4, room: "Sala de Treinamento", code: "RSV-004", time: "09:00 - 10:30" },
-        { id: 4, room: "Sala de Treinamento", code: "RSV-004", time: "09:00 - 10:30" },
-    ];
+    const buscarHorariosPorReserva = async (reservaId) => {
+        try {
+            const resposta = await axios.get(`${url}:${port}/horarios/reserva/${reservaId}`)
+            const horarios = resposta.data
 
-    const handleCancelClick = (reservationId) => {
-        setSelectedReservation(reservationId);
+            //Como preciso vincular os horários nas reservas, uso esse set que itera sobre cada elemento de reserva e itera o componente, adicionando os horários
+            setReservas(prev => prev.map(reserva => 
+                reserva.id === reservaId ? { 
+                    ...reserva, 
+                    horarios,
+                    laboratorio: horarios[0].laboratorioHorario.descricao     
+                } : reserva
+            ));
+     
+        } catch (error) {
+            console.log(error)
+        }
+    }
+    const verificarReservas = async () => {
+        try {
+            const resposta = await axios.get(`${url}:${port}/reserva/usuario/${usuarioLogado.id}`)
+            
+            if(resposta.status == 200){
+                const reservaData = resposta.data
+                setReservas(reservaData)
+                
+                if(reservaData.length > 0){
+                    
+                    reservaData.forEach(reserva => {
+                        buscarHorariosPorReserva(reserva.id);
+                    });
+                }
+            }
+            
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    useEffect(() => {
+        validarLogin(logado)
+        verificarReservas()
+       
+    }, [])
+
+    const abrirModal = (reservaId) => {
+        setReservaSelecionada(reservaId)
         setShowModal(true);
     };
 
-    const handleConfirmCancel = () => {
-        console.log("Reserva cancelada:", selectedReservation);
+    const cancelarReserva = async () => {
+        try {
+            const resposta = await axios.delete(`${url}:${port}/reserva/${reservaSelecionada}`)
+            if(resposta.status == 204){
+                alert("Reserva cancelada com sucesso!")
+                window.location.href = "/minhasReservas"
+            }
+        } catch (error) {
+            console.log(error)
+        }
+        setReservaSelecionada(null)
         setShowModal(false);
     };
 
@@ -37,13 +89,13 @@ export default function MinhasReservas() {
                     </header>
 
                     <section className="reservation-list">
-                        {reservationsData.map((reservation) => (
+                        {reservas.map((reserva, index) => (
                             <ReservationCard
-                                key={reservation.id}
-                                room={reservation.room}
-                                code={reservation.code}
-                                time={reservation.time}
-                                onCancel={() => handleCancelClick(reservation.id)}
+                                key={index}
+                                laboratorio={reserva.laboratorio}
+                                dataReserva={reserva.dataReserva}
+                                horarios={reserva.horarios}
+                                onCancel={() => abrirModal(reserva.id)}
                             />
                         ))}
                     </section>
@@ -51,7 +103,7 @@ export default function MinhasReservas() {
                     {showModal && (
                         <div className="modal-overlay" onClick={(e) => e.stopPropagation()}>
                             <CancelModal
-                                onConfirm={handleConfirmCancel}
+                                onConfirm={cancelarReserva}
                                 onCancel={() => setShowModal(false)}
                             />
                         </div>

@@ -7,8 +7,10 @@ export function formatarData(timestamp) {
     return `${dia}/${mes}/${ano}`;
 }
 
-export function validarLogin(estado){
-    if (!estado) {
+export function validarLogin(estado, tela = "normal"){
+    if (!estado && tela == "normal") {
         window.location.href="/"
+    }else if(estado && tela == "login"){
+        window.location.href="/laboratorios"
     }
 }

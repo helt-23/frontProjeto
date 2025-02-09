@@ -1,14 +1,19 @@
-import React, {useContext, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./App.css";
 
 import axios from "axios";
 import {url, port} from '../../../configApi.json'
 import { LoginContext } from "../../context/LoginContext";
+import { validarLogin } from "../../scripts";
 
 export default function Main() {
     const {setUsuarioLogado, usuarioLogado, setLogado, logado} = useContext(LoginContext)
     const navigate = useNavigate()
+
+    useEffect(() => {
+        validarLogin(logado, "login")
+    }, [])
 
     const [login, setLogin] = useState({
         matricula: "",
@@ -35,10 +40,12 @@ export default function Main() {
                 }
             })
 
-            console.log(resposta)
+            
             if(resposta.request.status == 200){
                 setLogado(true)
                 setUsuarioLogado(resposta.data)
+                sessionStorage.setItem('logado', 'true')
+                sessionStorage.setItem('usuarioLogado', JSON.stringify(resposta.data))
                 navigate("/laboratorios")
             }
 

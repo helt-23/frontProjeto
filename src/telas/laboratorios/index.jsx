@@ -18,6 +18,8 @@ export default function Laboratorios() {
 
     const toggleAba = () => setMostrarAba(!mostrarAba);
 
+
+
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (abaRef.current && !abaRef.current.contains(event.target)) {
@@ -41,6 +43,7 @@ export default function Laboratorios() {
         document.addEventListener("mousedown", handleClickOutside);
         return () => document.removeEventListener("mousedown", handleClickOutside);
     }, []);
+
 
     return (
         <div className="main-container-lab">

@@ -1,9 +1,11 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import "./horarios.css";
+import "../../styles.css"
+import { LoginContext } from "../../context/LoginContext.js";
 
 import {url, port} from '../../../configApi.json'
-import {formatarData} from '../../scripts.js'
+import {formatarData, validarLogin} from '../../scripts.js'
 import axios from "axios";
 
 export default function LabScheduleComponent() {
@@ -15,6 +17,7 @@ export default function LabScheduleComponent() {
     const [diasSemana, setDiasSemana] = useState(["Segunda", "Terça", "Quarta", "Quinta", "Sexta"])
 
     const [horariosUnicos, setHorariosUnicos] = useState([])
+    const {logado, usuarioLogado} = useContext(LoginContext)
 
     const buscarHorarios = async () => {    
         try {
@@ -26,6 +29,8 @@ export default function LabScheduleComponent() {
     }
 
     useEffect(() => {
+        validarLogin(logado)
+
         if(idLab){
             buscarHorarios()
         }
@@ -56,7 +61,30 @@ export default function LabScheduleComponent() {
         return horariosDoDia
     }
 
+    function listHorariosSemana(diaSemana){
+        //Para conseguir rodar os horários dinamicamente, eu recebo uma informação do hoário nessa função e listo e busco esse dado na função
+        //O filter retorna um horário que retorna um array. Esse array constitui a linha da tabel
+        
+        const horariosDoDia = horarios.filter(h => h.diaSemana === diaSemana)
+        console.log(horariosDoDia)
+        return horariosDoDia
+    }
     
+    function navegarReserva(diaSemana){
+        const horariosDoDia = listHorariosSemana(diaSemana)
+        navigate("/realizarReservas", {
+            state: {
+                sala, 
+                lugares, 
+                descricao, 
+                detalhe, 
+                idLab,
+                horarios,
+                horarios: horariosDoDia,
+                diaSemana
+            }
+        })
+    }
     
     return (
         <div className="schedule-wrapper">
@@ -88,39 +116,50 @@ export default function LabScheduleComponent() {
                     <thead>
                         <tr id="diasSemana">
                             <th>Horário</th>
-                            {diasSemana.map((dia) => (
-                                <th>{dia}</th>
+                            {diasSemana.map((dia, index) => (
+                                <th key={index}>{dia}</th>
                             ))}
                         </tr>
                     </thead>
                     <tbody>
-                        {horariosUnicos.map((time, index) => (
-                            <tr key={time}>
-                                <td className="time-cell">{time}</td>
-                                {listHorarios(time).map((horario, index) => {
-                                     return (
-                                         <td key={index} className={horario.disponivel ? "available-cell" : "available-cell reserved" }>
-                                            {
-                                                horario.disponivel ? 
-                                                    (
-                                                        <Link to="/realizarReservas" className="slot-link">
-                                                            Disponivel
-                                                        </Link>
-                                                    ):(
-                                                        <Link to="/realizarReservas" className="slot-link">
-                                                            Indisponivel <br />                                            
-                                                            Reservista: {horario.reservaHorario.usuarioReserva.nome} <br />
-                                                            DataReserva: {formatarData(horario.reservaHorario.dataReserva)}
-                                                        </Link>
-                                                    )
-                                            }
-                                             
-                                         </td>
-                                     )
-                                }
-                                   )}
-                            </tr>
-                        ))}
+                        {horariosUnicos.map((time, index) => {
+                            //const diaSemana = diasSemana[index]
+                            return(
+                                <tr key={index}>
+                                    <td className="time-cell">{time}</td>
+                                    {listHorarios(time).map((horario, index) => {
+                                        return (
+                                            <td key={index} className={horario.disponivel ? "available-cell" : "available-cell reserved" }>
+                                                {
+                                                    horario.disponivel ? 
+                                                        (
+                                                            <div 
+                                                                //to="/realizarReservas" 
+                                                                onClick={() => navegarReserva(horario.diaSemana)}
+                                                                className="slot-link"
+                                                                //state={{sala, lugares, descricao, detalhe, idLab }}
+                                                            >
+                                                                Disponivel
+                                                            </div>
+                                                        ):(
+                                                            <div 
+                                                                onClick={() => navegarReserva(horario.diaSemana)}
+                                                                className="slot-link"
+                                                            >
+                                                                Indisponivel <br />                                            
+                                                                Reservista: {horario.reservaHorario.usuarioReserva.nome} <br />
+                                                                DataReserva: {formatarData(horario.reservaHorario.dataReserva)}
+                                                            </div>
+                                                        )
+                                                }
+                                                
+                                            </td>
+                                        )
+                                    }
+                                    )}
+                                </tr>
+                            )}
+                        )}
                     </tbody>
                 </table>
             </section>

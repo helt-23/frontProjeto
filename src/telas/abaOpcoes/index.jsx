@@ -1,38 +1,54 @@
 // AbaOpcoes/index.jsx
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./App.css";
 
 export default function AbaOpcoes() {
+    const navigate = useNavigate()
     const opcoes = [
         {
             texto: "EDITAR INFORMAÇÕES",
-            caminho: "/editar",
-            className: "editar-informacoes"
+            className: "editar-informacoes",
+            funcao: editarInformacoes
         },
         {
             texto: "VER RESERVAS",
-            caminho: "/minhasReservas",
-            className: "ver-reservas"
+            className: "ver-reservas",
+            funcao: verReservas
         },
         {
             texto: "SAIR",
-            caminho: "/login",
-            className: "sair"
+            className: "sair", 
+            funcao: sair
         }
     ];
 
+    //Funções dos botões
+    function editarInformacoes() {
+        navigate("/editar")
+    }
+
+    function verReservas(){
+        navigate("/minhasReservas")
+    }
+
+    function sair(){
+        sessionStorage.setItem("logado", "false");
+        sessionStorage.removeItem("usuarioLogado"); 
+        window.location.href="/login"
+    }
     return (
         <div className="aba-opcoes-container">
             {opcoes.map((opcao, index) => (
-                <Link
+                <div
                     key={index}
-                    to={opcao.caminho}
+                    //to={opcao.caminho}
+                    onClick={opcao.funcao}
                     className={`opcao-botao ${opcao.className}`}
                 >
                     <div className="opcao-frame" />
                     <span>°{opcao.texto}</span>
-                </Link>
+                </div>
             ))}
         </div>
     );

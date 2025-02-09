@@ -37,6 +37,17 @@
     transition: all 0.3s ease;
 }
 
+.checkbox-desabilitado{
+    background-color: #f8d7da; /* Vermelho claro */
+    color: #721c24;
+}
+
+.checkbox-desabilitado:hover{
+    background-color: #f8d7da; /* Vermelho claro */
+    color: #721c24;
+    cursor: default;
+}
+
 .time-slot:hover {
     background-color: #f5f5f5;
 }
