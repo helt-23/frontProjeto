@@ -37,7 +37,6 @@ const Editar = () => {
             alert("Senha difere da confirmação")
             return
         }
-
         try {
             const response = await axios.put(`${url}:${port}/usuario/${usuarioLogado.id}`, dadosUsuario,{
                 headers: {
@@ -54,8 +53,8 @@ const Editar = () => {
         } catch (error) {
             console.log(error)
         }
-
     }
+
 
     return (
         <main className="main-container">

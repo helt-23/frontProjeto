@@ -13,10 +13,10 @@ export default function LabScheduleComponent() {
     const location = useLocation()
     const {sala, lugares, descricao, detalhe, idLab} = location.state || {}
 
-    const [horarios, setHorarios] = useState([])
-    const [diasSemana, setDiasSemana] = useState(["Segunda", "Terça", "Quarta", "Quinta", "Sexta"])
-
-    const [horariosUnicos, setHorariosUnicos] = useState([])
+    const [horarios, setHorarios] = useState([]) //Aqui recebe os horários do laboratório, indepentende do dia
+    const [diasSemana, setDiasSemana] = useState(["Segunda", "Terça", "Quarta", "Quinta", "Sexta"]) //Armazenar os dias da seman
+    const [horariosUnicos, setHorariosUnicos] = useState([]) //Armazenar os horários que não se repetem
+    
     const {logado, usuarioLogado} = useContext(LoginContext)
 
     const buscarHorarios = async () => {    
@@ -66,7 +66,6 @@ export default function LabScheduleComponent() {
         //O filter retorna um horário que retorna um array. Esse array constitui a linha da tabel
         
         const horariosDoDia = horarios.filter(h => h.diaSemana === diaSemana)
-        console.log(horariosDoDia)
         return horariosDoDia
     }
     
@@ -79,7 +78,6 @@ export default function LabScheduleComponent() {
                 descricao, 
                 detalhe, 
                 idLab,
-                horarios,
                 horarios: horariosDoDia,
                 diaSemana
             }
