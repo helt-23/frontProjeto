@@ -7,6 +7,7 @@ import { LoginContext } from "../../context/LoginContext.js";
 import {url, port} from '../../../configApi.json'
 import {formatarData, validarLogin} from '../../scripts.js'
 import axios from "axios";
+import Footer from "../rodaPe/Footer";
 
 export default function LabScheduleComponent() {
     const navigate = useNavigate();
@@ -162,6 +163,7 @@ export default function LabScheduleComponent() {
                     </tbody>
                 </table>
             </section>
+            <Footer/>
         </div>
     );
 }

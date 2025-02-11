@@ -145,3 +145,14 @@ body,
     display: none;
     /* Removida, pois o fundo já está no .telas-brancas */
 }
+
+/* Garante que o footer fique no final */
+.site-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
+}

@@ -137,3 +137,16 @@ body {
         min-width: 80px;
     }
 }
+
+
+
+/* Garante que o footer fique no final */
+.site-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
+}
