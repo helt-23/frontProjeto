@@ -98,7 +98,7 @@ body,
 .user-input,
 .senha-input-login {
     width: 100%;
-    padding: 15px 15px 15px 80px;
+    padding: 15px 15px 15px 100px;
     border: 2px solid var(--border-color);
     border-radius: 5px;
     font-size: 1rem;
@@ -144,4 +144,15 @@ body,
 .image-login {
     display: none;
     /* Removida, pois o fundo já está no .telas-brancas */
+}
+
+/* Garante que o footer fique no final */
+.site-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
 }

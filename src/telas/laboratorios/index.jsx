@@ -4,6 +4,7 @@ import AbaOpcoes from "../abaOpcoes";
 import "./App.css";
 import { LoginContext } from "../../context/LoginContext";
 import { validarLogin } from "../../scripts";
+import Footer from "../rodaPe/Footer";
 
 //Importação da configuração da API
 import axios from "axios";
@@ -77,6 +78,7 @@ export default function Laboratorios() {
                     ))}
                 </div>
             </main>
+            <Footer/>
         </div>
     );
 }

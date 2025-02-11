@@ -6,6 +6,7 @@ import axios from "axios";
 import {url, port} from '../../../configApi.json'
 import { LoginContext } from "../../context/LoginContext";
 import { validarLogin } from "../../scripts";
+import Footer from "../rodaPe/Footer";
 
 export default function Main() {
     const {setUsuarioLogado, usuarioLogado, setLogado, logado} = useContext(LoginContext)
@@ -71,7 +72,7 @@ export default function Main() {
 
                 {/* Campo de usuário */}
                 <div className="usuario-LOGIN">
-                    <span className="bloco-usuario">Usuário:</span>
+                    <span className="bloco-usuario">Matricula:</span>
                     <input 
                         type="text" 
                         className="user-input"
@@ -103,6 +104,7 @@ export default function Main() {
                     auto cadastro
                 </Link>
             </div>
+            <Footer />
         </div>
     );
 }

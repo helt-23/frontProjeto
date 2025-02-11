@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 import axios from "axios";
 import {url, port} from '../../../configApi.json'
+import Footer from "../rodaPe/Footer";
 
 export default function Main() {
     const navigate = useNavigate();
@@ -140,6 +141,7 @@ export default function Main() {
                 </div>
                 <div className="back-ground" />
             </div>
+            <Footer/>
         </div>
     );
 }

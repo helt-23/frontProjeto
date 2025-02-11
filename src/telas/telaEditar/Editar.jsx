@@ -6,6 +6,8 @@ import { LoginContext } from "../../context/LoginContext";
 import axios from "axios";
 import {url, port} from '../../../configApi.json'
 import { validarLogin } from "../../scripts";
+import Footer from "../rodaPe/Footer";
+
 const Editar = () => {
     const navigate = useNavigate();
     const {usuarioLogado, logado, setUsuarioLogado} = useContext(LoginContext)
@@ -124,6 +126,7 @@ const Editar = () => {
                     </button>
                 </div>
             </form>
+            <Footer/>
         </main>
     );
 };
