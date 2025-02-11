@@ -26,7 +26,7 @@ export default function Main() {
     }
 
     const cadastrarUsuario = async() => {
-        console.log(dataUsuario)
+        
         if(dataUsuario.senha != confSenha){
             alert("Senha informada difere da confirmação de senha")
             return;

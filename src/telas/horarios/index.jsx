@@ -19,6 +19,7 @@ export default function LabScheduleComponent() {
     
     const {logado, usuarioLogado} = useContext(LoginContext)
 
+    console.log(horarios)
     const buscarHorarios = async () => {    
         try {
             const response = await axios.get(`${url}:${port}/horarios/lab/${idLab}`)

@@ -32,6 +32,7 @@ export default function Main() {
             alert("Preencha os campos corretamente!")
             return
         }
+        
         try {
             const resposta = await axios.get(`${url}:${port}/usuario/loginUsuario`, {
                 params: {

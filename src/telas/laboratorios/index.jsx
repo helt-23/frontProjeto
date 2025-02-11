@@ -19,7 +19,6 @@ export default function Laboratorios() {
     const toggleAba = () => setMostrarAba(!mostrarAba);
 
 
-
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (abaRef.current && !abaRef.current.contains(event.target)) {

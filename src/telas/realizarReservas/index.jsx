@@ -28,7 +28,7 @@ export default function RealizarReservas() {
         );
     };
 
-    //console.log(horariosSelecionados)
+    //console.log(horarios)
 
     const gravaReserva = async () => {
         if(horariosSelecionados.length == 0){
@@ -38,7 +38,7 @@ export default function RealizarReservas() {
 
         try {
             const resposta = await axios.post(`${url}:${port}/reserva/${usuarioLogado.id}`, horariosSelecionados)
-            if((await resposta).status == 201){
+            if(resposta.status == 201){
                 alert("Reserva realizada com sucesso!!")
                 navigate("/horarios", {
                     state: {

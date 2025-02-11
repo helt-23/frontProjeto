@@ -34,6 +34,7 @@ export default function MinhasReservas() {
             console.log(error)
         }
     }
+
     const verificarReservas = async () => {
         try {
             const resposta = await axios.get(`${url}:${port}/reserva/usuario/${usuarioLogado.id}`)

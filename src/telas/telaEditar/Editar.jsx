@@ -48,7 +48,7 @@ const Editar = () => {
                 alert("Usuário editado com sucesso!")
                 setUsuarioLogado(response.data)
                 window.location.href = "/laboratorios"
-                navigate("/laboratorios")
+                
             }
         } catch (error) {
             console.log(error)
