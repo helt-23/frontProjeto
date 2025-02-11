@@ -9,7 +9,7 @@ const BotaoLab = ({ sala, lugares, descricao, detalhe, idLab }) => (
     >
         <div className="lab-header">
             <div className="lab-number">{sala}</div>
-            <div className="lab-capacity">{lugares}</div>
+            <div className="lab-capacity">Capacidade: {lugares}</div>
         </div>
         <div className="lab-description">
             <p>{descricao}</p>

@@ -16,24 +16,7 @@ export default function MinhasReservas() {
     const [showModal, setShowModal] = useState(false);
     const navigate = useNavigate();
 
-    const buscarHorariosPorReserva = async (reservaId) => {
-        try {
-            const resposta = await axios.get(`${url}:${port}/horarios/reserva/${reservaId}`)
-            const horarios = resposta.data
-
-            //Como preciso vincular os horários nas reservas, uso esse set que itera sobre cada elemento de reserva e itera o componente, adicionando os horários
-            setReservas(prev => prev.map(reserva => 
-                reserva.id === reservaId ? { 
-                    ...reserva, 
-                    horarios,
-                    laboratorio: horarios[0].laboratorioHorario.descricao     
-                } : reserva
-            ));
-     
-        } catch (error) {
-            console.log(error)
-        }
-    }
+    console.log(reservas)
 
     const verificarReservas = async () => {
         try {
@@ -42,13 +25,6 @@ export default function MinhasReservas() {
             if(resposta.status == 200){
                 const reservaData = resposta.data
                 setReservas(reservaData)
-                
-                if(reservaData.length > 0){
-                    
-                    reservaData.forEach(reserva => {
-                        buscarHorariosPorReserva(reserva.id);
-                    });
-                }
             }
             
         } catch (error) {
@@ -89,18 +65,28 @@ export default function MinhasReservas() {
                         <h1 className="reservations-title">Minhas Reservas</h1>
                     </header>
 
-                    <section className="reservation-list">
-                        {reservas.map((reserva, index) => (
-                            <ReservationCard
-                                key={index}
-                                laboratorio={reserva.laboratorio}
-                                dataReserva={reserva.dataReserva}
-                                horarios={reserva.horarios}
-                                onCancel={() => abrirModal(reserva.id)}
-                            />
-                        ))}
-                    </section>
+                    {
+                        reservas.length == 0 ? (
+                            <div className='div-semReserva'>
+                                <h3>Você não possui reservas</h3>
+                                
+                            </div>
+                        ):(
+                            <section className="reservation-list">
+                                {reservas.map((reserva, index) => (
+                                    <ReservationCard
+                                        key={index}
+                                        laboratorio={reserva.laboratorio.descricao}
+                                        dataReserva={reserva.dataReserva}
+                                        horarios={reserva.horarios}
+                                        onCancel={() => abrirModal(reserva.id)}
+                                    />
+                                ))}
+                            </section>
 
+                        )
+                    }
+                    
                     {showModal && (
                         <div className="modal-overlay" onClick={(e) => e.stopPropagation()}>
                             <CancelModal
