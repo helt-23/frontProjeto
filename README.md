@@ -22,6 +22,8 @@ O projeto segue uma organização clara e modular para facilitar o desenvolvimen
     - minhasReservas/: Visualização de reservas do usuário.  
     - realizarReservas/: Fluxo para criar novas reservas.  
     - telaEditar/: Edição de informações.
-     
-para rodar o programa é necessario por primeiro ter um Node.js e fazer a instalação do npm install e também fazer um npm react router dom para gerenciar a rota entre as paginas
+
+
+para rodar o programa é necessario por primeiro ter um Node.js e utilizamos a versão do Node v22.13.1
+após isso ir no node e fazer a instalação do npm install e também fazer um npm react router dom para gerenciar a rota entre as paginas
 e por fim rodar o prgrama usando o npm run dev
