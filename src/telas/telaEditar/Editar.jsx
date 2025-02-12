@@ -29,10 +29,10 @@ const Editar = () => {
     const [confSenha, setConfSenha] = useState('')
      //A função é acionada sempre que um campo for modificado
     const handleChange = (e) => {
-        //Atualiza "DadosUsuarios"  
+        //Atualiza "DadosUsuarios" com novos valores inseridos no input
         setDadosUsuario({
-            ...dadosUsuario,
-            [e.target.name]: e.target.value
+            ...dadosUsuario, //Mantém valores
+            [e.target.name]: e.target.value //Atualiza o campo correspondente ao input
         })
     }
 
