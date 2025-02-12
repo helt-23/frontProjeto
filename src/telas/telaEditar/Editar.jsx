@@ -17,6 +17,7 @@ const Editar = () => {
         validarLogin(logado)
     }, [])
 
+    
     const [dadosUsuario, setDadosUsuario] = useState({
         nome: usuarioLogado.nome,
         curso: usuarioLogado.curso,
@@ -24,10 +25,11 @@ const Editar = () => {
         senha: ''
     })
 
-
+     //Confirmar Senha
     const [confSenha, setConfSenha] = useState('')
-
+     //A função é acionada sempre que um campo for modificado
     const handleChange = (e) => {
+        //Atualiza "DadosUsuarios"  
         setDadosUsuario({
             ...dadosUsuario,
             [e.target.name]: e.target.value
